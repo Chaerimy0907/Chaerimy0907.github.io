@@ -7,8 +7,8 @@
 </head>
 <body>
 <header>
-  <div class="nav">
-    <div class="nav-left">CR's</div>
+  <div class="wrapper nav">
+    <div class="nav-left">CHAERYEON</div>
     <div class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -18,23 +18,33 @@
   </div>
 </header>
 
-<div class="main-layout">
-  <div class="side-image"></div>
+<main>
+  <section class="wrapper">
+    <div class="page-card">
+      <div class="section-label">BOARD / LOG</div>
+      <div class="page-title">작업 로그</div>
+      <div class="page-sub">프로젝트 진행 과정에서 남겨두고 싶은 메모들.</div>
 
-  <div class="content">
-    <div class="section-title">BOARD / LOG</div>
-    <h2>작업 로그 · 메모</h2>
-    <ul class="simple-list" style="margin-top:1rem;">
-      <li>· 2025-11-27 – 화재감지 순찰 로봇 프로젝트 최종 발표</li>
-      <li>· 2025-11-21 – Navigation2 파라미터 튜닝 & PatrolManager 개선</li>
-      <li>· 2025-11-12 – LiDAR 드라이버 오류 해결, TF 튐 문제 조사</li>
-      <!-- 필요할 때 계속 추가 -->
-    </ul>
-  </div>
-</div>
+      <ul class="board-list">
+        <li class="board-item">
+          <span>2025-11-27 · 화재감지 순찰 로봇 최종 발표</span>
+          <span class="board-tag">project</span>
+        </li>
+        <li class="board-item">
+          <span>2025-11-21 · Navigation2 파라미터 튜닝 & PatrolManager 개선</span>
+          <span class="board-tag">nav2</span>
+        </li>
+        <li class="board-item">
+          <span>2025-11-12 · LiDAR 드라이버 오류 및 TF 튐 현상 트러블슈팅</span>
+          <span class="board-tag">debug</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
 
 <footer>
-  Copyright © 2025 Chaeryeon
+  © 2025 Chaeryeon
 </footer>
 </body>
 </html>

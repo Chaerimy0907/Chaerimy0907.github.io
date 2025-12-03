@@ -2,16 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Chaeryeon Portfolio</title>
+  <title>Chaeryeon | Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 <header>
-  <div class="nav">
-    <div class="nav-left">Chaeryeon</div>
+  <div class="wrapper nav">
+    <div class="nav-left">CHAERYEON</div>
     <div class="nav-right">
-      <a class="active" href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Project</a>
       <a href="board.html">Board</a>
@@ -19,23 +18,61 @@
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <div class="section-title">PORTFOLIO</div>
-    <h1>박채련</h1>
-    <p>
-      ROS2 기반 자율주행 순찰 로봇과 컴퓨터 비전 프로젝트를 중심으로  
-      로봇 소프트웨어 스택부터 서버·웹 대시보드까지 전반적인 개발을 경험했습니다.
-    </p>
-    <a href="projects.html" class="btn">View Projects</a>
-  </div>
+<main>
+  <section class="wrapper hero">
+    <div class="hero-inner">
+      <div>
+        <div class="chip">
+          <span class="chip-dot"></span>
+          <span>Robotics · Computer Vision</span>
+        </div>
+        <div class="hero-title">박채련</div>
+        <p class="hero-sub">
+          ROS2 기반 자율주행 순찰 로봇과 화재 감지 시스템을 중심으로  
+          SLAM · Navigation2 · Patrol System · 웹 대시보드까지  
+          로봇과 서버를 잇는 전체 흐름을 직접 구축했습니다.
+        </p>
 
-  <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80" />
-</section>
+        <div class="hero-tags">
+          <span class="tag">ROS2 Humble</span>
+          <span class="tag">SLAM / Nav2</span>
+          <span class="tag">FastAPI · WebSocket</span>
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">YOLOv8</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="projects.html" class="btn-primary">프로젝트 보러가기</a>
+          <a href="about.html" class="btn-ghost">About me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-title">현재 집중한 프로젝트</div>
+          <div class="hero-dot-group">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="hero-card-body">
+          <strong>화재감지 순찰 로봇</strong>
+          <p>
+            실내 환경을 자율 순찰하며 화재·연기·가스를 감지하고  
+            웹 대시보드에서 상태를 모니터링하는 시스템.
+          </p>
+          <ul>
+            <li>SLAM → Nav2 → PatrolManager 파이프라인 설계</li>
+            <li>YAML 기반 Waypoints & Zone 구조 정의</li>
+            <li>FastAPI · WebSocket 기반 대시보드 연동</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
 
 <footer>
   © 2025 Chaeryeon
 </footer>
-
 </body>
 </html>

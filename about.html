@@ -7,8 +7,8 @@
 </head>
 <body>
 <header>
-  <div class="nav">
-    <div class="nav-left">CR's</div>
+  <div class="wrapper nav">
+    <div class="nav-left">CHAERYEON</div>
     <div class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
@@ -18,33 +18,42 @@
   </div>
 </header>
 
-<div class="main-layout">
-  <div class="side-image"></div>
+<main>
+  <section class="wrapper">
+    <div class="page-card">
+      <div class="section-label">ABOUT ME</div>
+      <div class="page-title">박채련</div>
+      <div class="page-sub">
+        자율주행 로봇과 컴퓨터 비전에 관심이 많은 개발자 지망생입니다.
+      </div>
 
-  <div class="content">
-    <div class="section-title">ABOUT ME</div>
-    <h2>안녕하세요, 박채련입니다.</h2>
-    <p>꾸준함과 책임감을 바탕으로 프로젝트를 끝까지 완성하는 개발자로 성장하고 있습니다.
-      최근에는 ROS2 기반 순찰 로봇 프로젝트를 통해 로봇 소프트웨어 스택 전체를 경험했습니다.</p>
+      <h3>소개</h3>
+      <p>
+        ROS2 기반 순찰 로봇 프로젝트를 통해 SLAM, Navigation2, Patrol System,  
+        웹 대시보드 연동까지 로봇과 서버를 잇는 전 과정을 직접 경험했습니다.  
+        문제 원인을 집요하게 파고들며 끝까지 결과를 만들어 내는 스타일입니다.
+      </p>
 
-    <h3 style="margin-top:1.5rem;">Education</h3>
-    <ul class="simple-list">
-      <li>· 스마트 모빌리티 부트캠프 – 자율주행 로봇 트랙 수료</li>
-      <!-- 학교 이력 있으면 여기 추가 -->
-    </ul>
+      <h3 style="margin-top:1.4rem;">Skills</h3>
+      <ul class="list">
+        <li>· ROS2 Humble (SLAM, Nav2, custom node 개발)</li>
+        <li>· Python, OpenCV, YOLOv8</li>
+        <li>· FastAPI, WebSocket, EC2</li>
+        <li>· Raspberry Pi, Arduino(MQ-2, ENS160)</li>
+      </ul>
 
-    <h3 style="margin-top:1.2rem;">Skills</h3>
-    <ul class="simple-list">
-      <li>· ROS2 (SLAM, Navigation2, custom node 개발)</li>
-      <li>· Python, OpenCV, YOLOv8</li>
-      <li>· FastAPI, WebSocket, EC2</li>
-      <li>· Raspberry Pi, Arduino(MQ-2, ENS160)</li>
-    </ul>
-  </div>
-</div>
+      <h3 style="margin-top:1.4rem;">관심 분야</h3>
+      <ul class="list">
+        <li>· 실내 자율주행 로봇 및 순찰 시스템</li>
+        <li>· 센서 융합 기반 환경 인식</li>
+        <li>· 실시간 모니터링 대시보드</li>
+      </ul>
+    </div>
+  </section>
+</main>
 
 <footer>
-  Copyright © 2025 Chaeryeon
+  © 2025 Chaeryeon
 </footer>
 </body>
 </html>

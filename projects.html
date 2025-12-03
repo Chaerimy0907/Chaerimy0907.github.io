@@ -7,8 +7,8 @@
 </head>
 <body>
 <header>
-  <div class="nav">
-    <div class="nav-left">CR's</div>
+  <div class="wrapper nav">
+    <div class="nav-left">CHAERYEON</div>
     <div class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -18,48 +18,42 @@
   </div>
 </header>
 
-<div class="main-layout">
-  <div class="side-image"></div>
+<main>
+  <section class="wrapper">
+    <div class="page-card">
+      <div class="section-label">PROJECTS</div>
+      <div class="page-title">작업한 프로젝트</div>
+      <div class="page-sub">
+        대표 프로젝트는 화재감지 순찰 로봇이며, 그 외 PPE 감지 실험 프로젝트를 진행했습니다.
+      </div>
 
-  <div class="content">
-    <div class="section-title">PROJECT</div>
-    <h2>Projects</h2>
-    <p>주요 프로젝트들을 정리한 페이지입니다. 카드를 클릭하면 상세 페이지로 이동합니다.</p>
+      <div class="project-grid">
+        <a href="project-fire-robot.html" class="project-card">
+          <div class="project-name">화재감지 순찰 로봇</div>
+          <div class="project-tech">ROS2 · Navigation2 · FastAPI · Arduino</div>
+          <div class="project-desc">
+            SLAM-Nav2-Patrol System을 연결해 실내를 자율 순찰하며,  
+            화재·가스 감지 정보를 웹 대시보드로 전송하는 로봇 시스템.
+          </div>
+          <div class="project-meta">Main Project · 2025.09 ~ 2025.11</div>
+        </a>
 
-    <div class="project-grid">
-      <!-- 화재감지 순찰 로봇 -->
-      <a href="project-fire-robot.html" class="project-card">
-        <div class="project-thumb"
-             style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80');">
-        </div>
-        <div class="project-body">
-          <div class="project-title">화재감지 순찰 로봇</div>
-          <div class="project-sub">ROS2 · Navigation2 · FastAPI · Arduino</div>
-          <p style="font-size:0.85rem;margin-top:0.4rem;">
-            SLAM-Nav2-Patrol System을 연결한 실내 자율 순찰 로봇 프로젝트.
-          </p>
-        </div>
-      </a>
-
-      <!-- PPE 프로젝트 (짧게) -->
-      <a href="project-ppe.html" class="project-card">
-        <div class="project-thumb"
-             style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80');">
-        </div>
-        <div class="project-body">
-          <div class="project-title">PPE 착용 감지 실험</div>
-          <div class="project-sub">YOLOv8 · PPE Detection</div>
-          <p style="font-size:0.85rem;margin-top:0.4rem;">
-            안전모/조끼 착용 여부 감지 및 착용률 산출 실험.
-          </p>
-        </div>
-      </a>
+        <a href="project-ppe.html" class="project-card">
+          <div class="project-name">PPE 착용 감지 실험</div>
+          <div class="project-tech">YOLOv8 · PPE Detection</div>
+          <div class="project-desc">
+            안전모/조끼 착용 여부를 감지하고, 일정 기간 동안의 착용률을  
+            통계로 남기는 실험 프로젝트.
+          </div>
+          <div class="project-meta">Side Project</div>
+        </a>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <footer>
-  Copyright © 2025 Chaeryeon
+  © 2025 Chaeryeon
 </footer>
 </body>
 </html>
