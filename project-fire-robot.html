@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>화재감지 순찰 로봇 | Chaeryeon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="nav-left">CR's</div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Project</a>
+      <a href="board.html">Board</a>
+    </div>
+  </div>
+</header>
+
+<div class="main-layout">
+  <div class="side-image"></div>
+
+  <div class="content">
+    <div class="section-title">PROJECT DETAIL</div>
+    <h2>화재감지 순찰 로봇</h2>
+    <p><strong>기간</strong> · 2025.09.22 ~ 2025.11.27</p>
+    <p><strong>기술</strong> · ROS2 Humble, Navigation2, slam_toolbox, FastAPI, WebSocket, Raspberry Pi, Arduino(MQ-2, ENS160)</p>
+
+    <h3 style="margin-top:1.5rem;">프로젝트 개요</h3>
+    <p>
+      실내 환경을 자율 순찰하며 화재·연기·유해가스를 감지하고,
+      웹 대시보드와 연동해 상태를 모니터링하는 로봇 시스템입니다.
+      SLAM으로 지도 생성 후 Navigation2로 경로 계획을 수행하고,
+      PatrolManager 노드로 순찰 시나리오를 자동화했습니다.
+    </p>
+
+    <h3 style="margin-top:1.2rem;">내 역할</h3>
+    <ul class="simple-list">
+      <li>· SLAM 지도 생성 및 Nav2 파이프라인 환경 구성</li>
+      <li>· YAML 기반 waypoints/zone 설계 및 PatrolManager.py 구현</li>
+      <li>· start/pause/resume/return 명령 처리, 배터리 모니터링 및 자동 복귀 로직 개발</li>
+      <li>· FastAPI 웹 대시보드와 ROS2 사이의 WebSocket 연동 구조 설계</li>
+    </ul>
+
+    <h3 style="margin-top:1.2rem;">산출물</h3>
+    <ul class="simple-list">
+      <li>· 발표 자료(PDF) – <a href="PDF_링크_여기에" target="_blank">보기</a></li>
+      <li>· 시연 영상 – <a href="영상_링크_여기에" target="_blank">보기</a></li>
+      <li>· GitHub Repo – <a href="깃허브_링크_여기에" target="_blank">코드 보기</a></li>
+    </ul>
+
+    <p style="margin-top:1.5rem;">
+      <a href="projects.html" class="btn">← Project 목록으로</a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  Copyright © 2025 Chaeryeon
+</footer>
+</body>
+</html>

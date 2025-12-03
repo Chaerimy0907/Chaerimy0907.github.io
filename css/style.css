@@ -1,0 +1,193 @@
+/* css/style.css */
+:root {
+  --indigo: #324a7a;
+  --indigo-light: #4f6bb3;
+  --bg: #f5f7fb;
+  --text: #222;
+  --border: #dddddd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+/* 상단 네비게이션 */
+header {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.nav-right a {
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #444;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
+
+.nav-right a:hover {
+  background: #eee;
+}
+
+.nav-right a.active {
+  background: #222;
+  color: #fff;
+}
+
+/* 메인 레이아웃: 왼쪽 사진 / 오른쪽 내용 */
+.main-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  min-height: calc(100vh - 140px); /* 대충 헤더+푸터 제외 */
+}
+
+/* 왼쪽 사진 영역 */
+.side-image {
+  width: 40%;
+  min-height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1521292270410-a8c53642e9d0?auto=format&fit=crop&w=800&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 오른쪽 내용 영역 */
+.content {
+  width: 60%;
+  background: var(--bg);
+  padding: 3rem 4rem;
+}
+
+/* 공통 섹션 스타일 */
+.section-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+h1.main-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--indigo);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* 버튼 */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.4rem;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  background: #000;
+}
+
+/* 프로젝트 카드 */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e2ec;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-thumb {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+
+.project-title {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.project-sub {
+  font-size: 0.82rem;
+  color: #777;
+}
+
+/* 리스트 스타일 (About, Board 등) */
+ul.simple-list {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+ul.simple-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* 푸터 */
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.8rem 0;
+  color: #777;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .side-image {
+    width: 100%;
+    height: 220px;
+  }
+  .content {
+    width: 100%;
+    padding: 2rem 1.8rem;
+  }
+}

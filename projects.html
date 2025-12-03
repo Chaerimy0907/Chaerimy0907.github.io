@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Chaeryeon</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="nav-left">CR's</div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Project</a>
+      <a href="board.html">Board</a>
+    </div>
+  </div>
+</header>
+
+<div class="main-layout">
+  <div class="side-image"></div>
+
+  <div class="content">
+    <div class="section-title">PROJECT</div>
+    <h2>Projects</h2>
+    <p>주요 프로젝트들을 정리한 페이지입니다. 카드를 클릭하면 상세 페이지로 이동합니다.</p>
+
+    <div class="project-grid">
+      <!-- 화재감지 순찰 로봇 -->
+      <a href="project-fire-robot.html" class="project-card">
+        <div class="project-thumb"
+             style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80');">
+        </div>
+        <div class="project-body">
+          <div class="project-title">화재감지 순찰 로봇</div>
+          <div class="project-sub">ROS2 · Navigation2 · FastAPI · Arduino</div>
+          <p style="font-size:0.85rem;margin-top:0.4rem;">
+            SLAM-Nav2-Patrol System을 연결한 실내 자율 순찰 로봇 프로젝트.
+          </p>
+        </div>
+      </a>
+
+      <!-- PPE 프로젝트 (짧게) -->
+      <a href="project-ppe.html" class="project-card">
+        <div class="project-thumb"
+             style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80');">
+        </div>
+        <div class="project-body">
+          <div class="project-title">PPE 착용 감지 실험</div>
+          <div class="project-sub">YOLOv8 · PPE Detection</div>
+          <p style="font-size:0.85rem;margin-top:0.4rem;">
+            안전모/조끼 착용 여부 감지 및 착용률 산출 실험.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Copyright © 2025 Chaeryeon
+</footer>
+</body>
+</html>
