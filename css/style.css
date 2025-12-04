@@ -208,7 +208,7 @@ footer {
 
 /* ================== ABOUT PAGE ================== */
 
-.about-section {
+.about-page {
   width: 100%;
   min-height: calc(100vh - 64px - 70px);
   display: flex;
@@ -216,73 +216,132 @@ footer {
   align-items: flex-start;
 }
 
-.about-wrap {
-  max-width: 900px;
+.about-inner {
+  max-width: 1000px;
   width: 100%;
   margin: 3rem auto 0;
   padding: 0 1.5rem;
+  display: flex;
+  gap: 2.8rem;
 }
 
-.about-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 12px 30px rgba(148,163,209,0.25);
-  padding: 2.2rem 2.4rem 2.5rem;
+/* 왼쪽 사진 영역 */
+.about-left {
+  flex: 0 0 240px;
+  display: flex;
+  justify-content: center;
 }
 
-.about-label {
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 0.4rem;
+.about-photo {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.18);
 }
 
-.about-title {
-  font-size: 1.9rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.about-sub {
-  font-size: 0.95rem;
-  color: #4b5563;
+/* 오른쪽 내용 영역 */
+.about-right {
+  flex: 1;
+}
+
+/* 블럭 공통 */
+.about-block {
   margin-bottom: 1.8rem;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.8rem;
-}
-
-.about-grid-bottom {
-  margin-top: 1.6rem;
-}
-
-.about-block h2 {
-  font-size: 1rem;
+.about-heading {
+  font-size: 1.3rem;
   font-weight: 600;
+}
+
+.about-kor {
+  font-size: 0.85rem;
+  color: #9ca3af;
   margin-bottom: 0.6rem;
 }
 
-.about-block ul {
-  list-style: none;
-  font-size: 0.9rem;
-  color: #6b7280;
+.about-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
 }
 
-.about-block li {
+.about-list {
+  list-style: none;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.about-list li {
   margin-bottom: 0.35rem;
 }
 
+/* Skills & Tools 영역 */
+.tool-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.tool-group-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.tool-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tool-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.tool-icon-shape {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #f3f4ff;
+  border: 1px solid #e5e7ff;
+  margin-bottom: 0.3rem;
+}
+
+/* 이미지로 바꿀 때는 이렇게 쓰면 됨
+.tool-icon img {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+}
+*/
+
 @media (max-width: 900px) {
-  .about-card {
-    padding: 2rem 1.6rem 2.2rem;
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
+  .about-left {
+    flex: 0 0 auto;
+  }
+
+  .about-right {
+    width: 100%;
   }
 }

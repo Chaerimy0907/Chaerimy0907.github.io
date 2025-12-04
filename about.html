@@ -22,58 +22,123 @@
 </header>
 
 <main>
-  <section class="about-section">
-    <div class="about-wrap">
-      <div class="about-card">
-        <div class="about-label">ABOUT ME</div>
-        <h1 class="about-title">박채련</h1>
-        <p class="about-sub">
-          ROS2 기반 자율주행 순찰 로봇과 화재 감지 시스템을 중심으로  
-          로봇 쪽 SLAM · Navigation2 · Patrol System부터 서버·웹 대시보드까지  
-          한 흐름으로 이어지는 구조를 설계하는 걸 좋아합니다.
-        </p>
-
-        <div class="about-grid">
-          <div class="about-block">
-            <h2>Profile</h2>
-            <ul>
-              <li>• 관심 분야: 자율주행 로봇, 실내 순찰 시스템, 컴퓨터 비전</li>
-              <li>• 강점: 문제 원인 집요하게 파고드는 스타일, 끝까지 해내는 꾸준함</li>
-              <li>• 현재: ROS2 · SLAM · Nav2 파이프라인와 웹 연동 쪽 더 파고드는 중</li>
-            </ul>
-          </div>
-
-          <div class="about-block">
-            <h2>Main Projects</h2>
-            <ul>
-              <li>• <strong>화재감지 순찰 로봇</strong> – SLAM → Nav2 → PatrolManager 파이프라인 설계</li>
-              <li>• 센서(연기, 가스, 온도) + FastAPI · WebSocket 기반 대시보드 연동</li>
-              <li>• <strong>PPE 착용 감지</strong> – YOLOv8으로 안전모/조끼 착용률 측정 실험</li>
-            </ul>
-          </div>
+  <section class="about-page">
+    <div class="about-inner">
+      <!-- 왼쪽: 사진 -->
+      <div class="about-left">
+        <div class="about-photo">
+          <!-- 여기 src에 너 사진 경로 넣으면 됨 (예: images/profile.jpg) -->
+          <img src="images/profile.jpg" alt="Profile photo" />
         </div>
+      </div>
 
-        <div class="about-grid about-grid-bottom">
-          <div class="about-block">
-            <h2>Tech Stack</h2>
-            <ul>
-              <li>• ROS2 Humble (slam_toolbox, Navigation2, custom node)</li>
-              <li>• Python, OpenCV, YOLOv8</li>
-              <li>• FastAPI, WebSocket, EC2</li>
-              <li>• Raspberry Pi, Arduino(MQ-2, ENS160)</li>
-            </ul>
+      <!-- 오른쪽: 내용 -->
+      <div class="about-right">
+        <!-- About Me -->
+        <section class="about-block">
+          <h1 class="about-heading">About Me</h1>
+          <p class="about-kor">자기소개</p>
+          <p class="about-text">
+            여기 자기소개 문장 넣으면 됨.  
+            예) ROS2 기반 자율주행 로봇과 컴퓨터 비전에 관심이 많은 박채련입니다.  
+            순찰 로봇 프로젝트를 통해 SLAM · Navigation2 · Patrol System, 웹 대시보드까지
+            한 흐름으로 설계하고 구현하는 경험을 쌓았습니다.
+          </p>
+        </section>
+
+        <!-- Education -->
+        <section class="about-block">
+          <h2 class="about-heading">Education</h2>
+          <p class="about-kor">학력 및 수료</p>
+          <ul class="about-list">
+            <!-- 여기 실제 학력/교육 이력으로 바꾸면 됨 -->
+            <li>202X ~ 202X · ○○ 교육과정 수료</li>
+            <li>20XX ~ 20XX · ○○대학교 ○○학과</li>
+          </ul>
+        </section>
+
+        <!-- Certificate -->
+        <section class="about-block">
+          <h2 class="about-heading">Certificate</h2>
+          <p class="about-kor">자격증</p>
+          <ul class="about-list">
+            <!-- 실제 자격증으로 수정 -->
+            <li>정보처리기사 (20XX)</li>
+            <li>기타 자격증</li>
+          </ul>
+        </section>
+
+        <!-- Skills & Tools -->
+        <section class="about-block">
+          <h2 class="about-heading">Skills &amp; Tools</h2>
+          <p class="about-kor">다룰 수 있는 도구</p>
+
+          <div class="tool-groups">
+            <!-- 그룹 이름(Basic/Library/Others)은 나중에 바꿔도 됨 -->
+            <div class="tool-group">
+              <div class="tool-group-title">Basic</div>
+              <div class="tool-icon-row">
+                <!-- 아래 아이콘 하나당 ‘이미지 1개’라고 생각하면 됨 -->
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool 1</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool 2</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool 3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Library / Framework</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Lib 1</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Lib 2</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Lib 3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Tools &amp; Platform</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool A</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool B</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>Tool C</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="about-block">
-            <h2>What I care about</h2>
-            <ul>
-              <li>• “실제로 돌아가는 시스템” 만들기</li>
-              <li>• 장애 상황에서 왜 멈췄는지 끝까지 추적하는 로그/구조</li>
-              <li>• 나중에 다시 봐도 이해할 수 있는 코드/문서 정리</li>
-            </ul>
+          <!-- 나중에 실제 아이콘 쓸 때는 .tool-icon-shape 대신 img로 교체하면 됨 -->
+          <!--
+          <div class="tool-icon">
+            <img src="images/python-logo.png" alt="Python" />
+            <span>Python</span>
           </div>
-        </div>
-
+          -->
+        </section>
       </div>
     </div>
   </section>
