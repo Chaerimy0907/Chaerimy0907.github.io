@@ -2,58 +2,63 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Projects | Chaeryeon</title>
+  <title>Project | Chaeryeon</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-<header>
-  <div class="wrapper nav">
-    <div class="nav-left">CHAERYEON</div>
-    <div class="nav-right">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" class="active">Project</a>
-      <a href="board.html">Board</a>
-    </div>
-  </div>
-</header>
+  <!-- 헤더 그대로 유지 -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CR</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="project.html">Project</a></li>
+        <li><a href="board.html">Board</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <section class="wrapper">
-    <div class="page-card">
-      <div class="section-label">PROJECTS</div>
-      <div class="page-title">작업한 프로젝트</div>
-      <div class="page-sub">
-        대표 프로젝트는 화재감지 순찰 로봇이며, 그 외 PPE 감지 실험 프로젝트를 진행했습니다.
+  <main class="project-container">
+
+    <!-- 왼쪽 화살표 -->
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+
+    <!-- 슬라이드 전체 -->
+    <div class="slider">
+
+      <!-- 1번 슬라이드 : 자율주행 로봇 -->
+      <div class="slide active">
+        <img src="images/robot_project.jpg" class="project-img">
+        <h2>자율주행 순찰 로봇 시스템</h2>
+        <p>
+          SLAM · Navigation2 · Patrol System 기반의 실내 자율주행 로봇.  
+          FastAPI · WebSocket 서버와 연동하여 웹 대시보드에서 실시간 상태를 모니터링하는 시스템.
+        </p>
       </div>
 
-      <div class="project-grid">
-        <a href="project-fire-robot.html" class="project-card">
-          <div class="project-name">화재감지 순찰 로봇</div>
-          <div class="project-tech">ROS2 · Navigation2 · FastAPI · Arduino</div>
-          <div class="project-desc">
-            SLAM-Nav2-Patrol System을 연결해 실내를 자율 순찰하며,  
-            화재·가스 감지 정보를 웹 대시보드로 전송하는 로봇 시스템.
-          </div>
-          <div class="project-meta">Main Project · 2025.09 ~ 2025.11</div>
-        </a>
-
-        <a href="project-ppe.html" class="project-card">
-          <div class="project-name">PPE 착용 감지 실험</div>
-          <div class="project-tech">YOLOv8 · PPE Detection</div>
-          <div class="project-desc">
-            안전모/조끼 착용 여부를 감지하고, 일정 기간 동안의 착용률을  
-            통계로 남기는 실험 프로젝트.
-          </div>
-          <div class="project-meta">Side Project</div>
-        </a>
+      <!-- 2번 슬라이드 : PPE 감지 -->
+      <div class="slide">
+        <img src="images/ppe_project.jpg" class="project-img">
+        <h2>PPE 착용 감지 시스템</h2>
+        <p>
+          YOLOv8 기반 안전모·조끼 착용 여부 판단 모델 구현.  
+          실시간 스트림 분석 및 알림 기능 포함.
+        </p>
       </div>
-    </div>
-  </section>
-</main>
 
-<footer>
-  © 2025 Chaeryeon
-</footer>
+    </div>
+
+    <!-- 오른쪽 화살표 -->
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Chaeryeon</p>
+  </footer>
+
+  <script src="js/project.js"></script>
 </body>
 </html>

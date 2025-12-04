@@ -352,3 +352,56 @@ footer {
     padding: 1.8rem 1.4rem;
   }
 }
+
+/* 프로젝트 전체 컨테이너 */
+.project-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+/* 좌우 화살표 */
+.arrow {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
+  color: #8ea3ff;
+  transition: 0.2s;
+}
+
+.arrow:hover {
+  color: #6377ff;
+}
+
+/* 슬라이더 영역 */
+.slider {
+  width: 700px;
+  height: 420px;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;
+  padding: 30px;
+}
+
+/* 슬라이드 하나 */
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* 이미지 */
+.project-img {
+  width: 80%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
