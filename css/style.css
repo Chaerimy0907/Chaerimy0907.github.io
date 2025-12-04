@@ -110,6 +110,8 @@ main {
 
 /* ============= 오른쪽 텍스트 ============= */
 .profile-text {
+  width: 450px;
+  height: 300px;
   flex: 2;
 }
 
