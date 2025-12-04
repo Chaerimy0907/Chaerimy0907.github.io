@@ -222,7 +222,7 @@ footer {
   margin: 3rem auto 0;
   padding: 0 1.5rem;
   display: flex;
-  gap: 2.8rem;
+  gap: 4.2rem;
 }
 
 /* 왼쪽 사진 영역 */
@@ -233,8 +233,8 @@ footer {
 }
 
 .about-photo {
-  width: 210px;
-  height: 210px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   background: #e5e7eb;
   overflow: hidden;
