@@ -345,3 +345,18 @@ footer {
     width: 100%;
   }
 }
+
+.about-page::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width : 400px;
+  height: 400px;
+  background: radial-gradient(circle,
+    rgba(99,102,241,0.15),
+    rgba(255,255,255,0)
+    );
+  filter: blur(40px);
+  z-index: -1;
+}
