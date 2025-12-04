@@ -221,7 +221,7 @@ footer {
   padding: 0 2rem;
   display: flex;
   align-items: flex-start;
-  column-gap: 4rem; /* 사진과 내용 사이 여백 */
+  column-gap: 10rem; /* 사진과 내용 사이 여백 */
 }
 
 /* 왼쪽 사진 영역 */
@@ -316,6 +316,7 @@ footer {
   width: 80px;
   font-size: 0.8rem;
   color: #4b5563;
+  text-align: center;
 }
 
 .tool-icon-shape {
