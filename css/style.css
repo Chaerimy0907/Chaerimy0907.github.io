@@ -112,7 +112,7 @@ main {
 .profile-text {
   width: 450px;
   height: 300px;
-  flex: 2;
+  flex: 1;
 }
 
 .profile-text h2 {
