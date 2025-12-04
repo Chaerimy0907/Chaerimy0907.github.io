@@ -362,6 +362,8 @@ footer {
   display: flex;
   justify-content: center;
   padding: 40px 0 80px;
+  min-height: 80vh;
+  align-items: center;
 }
 
 .project-carousel {
