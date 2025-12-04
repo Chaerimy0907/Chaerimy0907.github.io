@@ -4,55 +4,57 @@
   <meta charset="UTF-8" />
   <title>Chaeryeon | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+
 <header>
   <div class="nav">
-    <div class="nav-left">CHAERYEON</div>
+    <div class="nav-left">chaeryeon</div>
     <nav class="nav-right">
       <a href="index.html" class="active">home</a>
-      <a href="about.html">about</a>
-      <a href="projects.html">project</a>
+      <a href="about.html">about me</a>
+      <a href="projects.html">portfolio</a>
       <a href="board.html">board</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero-wrapper">
-    <section class="hero">
+  <section class="home-section">
+
+    <div class="profile-wrap">
       <div class="profile-circle">
-        <div class="profile-initial">CR</div>
+        <!-- 원하는 프로필 이미지 URL로 교체 가능 -->
+        <img src="https://i.imgur.com/6o5ZQJq.png" alt="profile" />
       </div>
 
-      <div>
-        <div class="hero-text-topline">hi, i'm chaeryeon 👋</div>
-        <h1 class="hero-title">
-          I'm into <span>Robotics & CV</span>.
-        </h1>
-        <p class="hero-subtitle">
-          ROS2 기반 자율주행 순찰 로봇과 화재 감지 시스템을 만들고 있습니다.
-        </p>
+      <div class="profile-text">
+        <h2>Hi, I'm <span class="name">Chaeryeon 👋</span></h2>
+        <h3>Robotics · Computer Vision Developer</h3>
 
-        <ul class="hero-list">
-          <li><span class="dot"></span><span>SLAM / Navigation2 / Patrol System 구축</span></li>
-          <li><span class="dot"></span><span>FastAPI · WebSocket 기반 웹 대시보드 연동</span></li>
-          <li><span class="dot"></span><span>YOLOv8 기반 PPE 감지 실험</span></li>
+        <ul class="info-list">
+          <li>⚙️ ROS2 기반 자율주행 / SLAM / Navigation2 구축</li>
+          <li>🤖 Patrol System 설계 & 웹 대시보드 연동</li>
+          <li>🧪 YOLOv8 기반 PPE 감지 실험</li>
+          <li>🌐 FastAPI · WebSocket 기반 서버 구축</li>
         </ul>
 
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">프로젝트 보러가기</a>
-          <a href="about.html" class="btn btn-ghost">About me</a>
+        <div class="home-buttons">
+          <a class="btn-primary" href="projects.html">프로젝트 보러가기</a>
+          <a class="btn-secondary" href="about.html">About me</a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+
+  </section>
 </main>
 
 <footer>
   © 2025 Chaeryeon
 </footer>
+
 </body>
 </html>
