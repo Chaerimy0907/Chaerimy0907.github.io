@@ -8,57 +8,57 @@
 
 <body>
   <!-- 헤더 그대로 유지 -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">CR</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a class="active" href="project.html">Project</a></li>
-        <li><a href="board.html">Board</a></li>
-      </ul>
+<header>
+  <div class="nav">
+    <div class="nav-left">CR</div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Project</a>
+      <a href="board.html">board</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="project-container">
+<main class="project-container">
 
-    <!-- 왼쪽 화살표 -->
-    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+  <!-- 왼쪽 화살표 -->
+  <div class="arrow left" onclick="prevSlide()">&#10094;</div>
 
-    <!-- 슬라이드 전체 -->
-    <div class="slider">
+  <!-- 슬라이드 전체 -->
+  <div class="slider">
 
-      <!-- 1번 슬라이드 : 자율주행 로봇 -->
-      <div class="slide active">
-        <img src="images/robot_project.jpg" class="project-img">
-        <h2>자율주행 순찰 로봇 시스템</h2>
-        <p>
-          SLAM · Navigation2 · Patrol System 기반의 실내 자율주행 로봇.  
-          FastAPI · WebSocket 서버와 연동하여 웹 대시보드에서 실시간 상태를 모니터링하는 시스템.
-        </p>
-      </div>
-
-      <!-- 2번 슬라이드 : PPE 감지 -->
-      <div class="slide">
-        <img src="images/ppe_project.jpg" class="project-img">
-        <h2>PPE 착용 감지 시스템</h2>
-        <p>
-          YOLOv8 기반 안전모·조끼 착용 여부 판단 모델 구현.  
-          실시간 스트림 분석 및 알림 기능 포함.
-        </p>
-      </div>
-
+    <!-- 1번 슬라이드 : 자율주행 로봇 -->
+    <div class="slide active">
+      <img src="images/robot_project.jpg" class="project-img">
+      <h2>자율주행 순찰 로봇 시스템</h2>
+      <p>
+        SLAM · Navigation2 · Patrol System 기반의 실내 자율주행 로봇.  
+        FastAPI · WebSocket 서버와 연동하여 웹 대시보드에서 실시간 상태를 모니터링하는 시스템.
+      </p>
     </div>
 
-    <!-- 오른쪽 화살표 -->
-    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+    <!-- 2번 슬라이드 : PPE 감지 -->
+    <div class="slide">
+      <img src="images/ppe_project.jpg" class="project-img">
+      <h2>PPE 착용 감지 시스템</h2>
+      <p>
+        YOLOv8 기반 안전모·조끼 착용 여부 판단 모델 구현.  
+        실시간 스트림 분석 및 알림 기능 포함.
+      </p>
+    </div>
 
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2025 Chaeryeon</p>
-  </footer>
+  <!-- 오른쪽 화살표 -->
+  <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 
-  <script src="js/project.js"></script>
+</main>
+
+<footer>
+  <p>© 2025 Chaeryeon</p>
+</footer>
+
+<script src="js/project.js"></script>
 </body>
 </html>
