@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Chaeryeon | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
-      --indigo: #3b5bdb;
-      --indigo-dark: #364fc7;
-      --bg1: #f2f5ff;
-      --bg2: #e8edff;
-      --text-main: #1e1e2f;
-      --text-sub: #6b6e82;
+      --indigo: #4f46e5;
+      --indigo-soft: #6366f1;
+      --bg: #f5f5f5;
+      --text-main: #111827;
+      --text-sub: #6b7280;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #e0e7ff 0, #f5f5ff 35%, #f9fafb 100%);
       color: var(--text-main);
-      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     /* HEADER */
     header {
       width: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid #e2e5f3;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -39,9 +47,8 @@
 
     .nav {
       max-width: 1100px;
-      height: 66px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0.9rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,144 +58,263 @@
       font-weight: 800;
       font-size: 1.2rem;
       letter-spacing: 0.12em;
-      color: var(--indigo-dark);
+      color: #111827;
     }
 
     .nav-right a {
-      margin-left: 1.3rem;
+      margin-left: 1.4rem;
       font-size: 0.95rem;
-      text-decoration: none;
-      color: var(--text-sub);
       padding: 0.4rem 0.9rem;
       border-radius: 999px;
+      color: var(--text-sub);
       transition: 0.15s;
     }
 
     .nav-right a:hover {
-      background: #e4e8ff;
-      color: var(--indigo-dark);
+      background: #e5e7ff;
+      color: var(--indigo-soft);
     }
 
-    .nav-right .active {
-      background: var(--indigo-dark);
+    .nav-right a.active {
+      background: var(--indigo);
       color: white;
     }
 
-    /* HERO */
+    /* MAIN HERO */
     main {
       flex: 1;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .hero-wrapper {
+      max-width: 1050px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      align-items: center;
+      gap: 3rem;
+      padding: 2.5rem 3rem;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 60px rgba(148,163,209,0.45);
+      border: 1px solid rgba(209,213,245,0.9);
+    }
+
+    /* 왼쪽 프로필 원형 */
+    .profile-circle {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, #4f46e5, #22d3ee);
+      box-shadow: 0 25px 55px rgba(79,70,229,0.6);
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      overflow: hidden;
+      margin: 0 auto;
     }
 
-    .hero-box {
-      text-align: center;
-      max-width: 650px;
-      padding: 3.5rem 2.2rem;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(169, 180, 255, 0.35);
-      box-shadow: 0 18px 45px rgba(95, 112, 180, 0.25);
+    /* 실제 사진 쓰고 싶으면 아래에 img 넣기 */
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .title {
-      font-size: 2.8rem;
+    /* 사진 없을 때 이니셜용 */
+    .profile-initial {
+      font-size: 4rem;
       font-weight: 800;
-      color: var(--indigo-dark);
-      margin-bottom: 0.9rem;
-      letter-spacing: -0.03em;
+      color: #f9fafb;
     }
 
-    .subtitle {
-      font-size: 1.05rem;
+    /* 오른쪽 텍스트 */
+    .hero-text-topline {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
       color: var(--text-sub);
-      margin-bottom: 2.2rem;
+      margin-bottom: 0.6rem;
     }
 
-    /* BUTTONS */
-    .btn-row {
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title span {
+      color: var(--indigo-soft);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-list li {
+      margin-bottom: 0.3rem;
       display: flex;
-      justify-content: center;
-      gap: 1rem;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--indigo-soft);
+    }
+
+    .hero-buttons {
+      display: flex;
       flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.6rem;
     }
 
     .btn {
       font-size: 0.95rem;
-      padding: 0.8rem 1.6rem;
+      padding: 0.75rem 1.6rem;
       border-radius: 999px;
       cursor: pointer;
       border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      display: inline-block;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--indigo), var(--indigo-dark));
+      background: linear-gradient(135deg, var(--indigo), var(--indigo-soft));
       color: white;
-      box-shadow: 0 10px 25px rgba(59,91,219,0.4);
+      box-shadow: 0 14px 30px rgba(79,70,229,0.55);
     }
-    .btn-primary:hover { filter: brightness(1.06); }
+
+    .btn-primary:hover {
+      filter: brightness(1.06);
+    }
 
     .btn-ghost {
       border: 1px solid var(--indigo);
-      color: var(--indigo-dark);
+      color: var(--indigo-soft);
       background: transparent;
     }
+
     .btn-ghost:hover {
-      background: #e4e8ff;
-      color: var(--indigo-dark);
+      background: #e5e7ff;
     }
 
-    /* FOOTER */
+    /* 푸터 */
     footer {
       text-align: center;
-      padding: 1.8rem 0 2.3rem;
       font-size: 0.85rem;
-      color: #8d92a7;
+      color: #9ca3af;
+      padding: 1.8rem 0 2.2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2.2rem 1.6rem;
+        text-align: center;
+      }
+      .hero-list {
+        align-items: center;
+      }
+      .hero-list li {
+        justify-content: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 600px) {
-      .title { font-size: 2.2rem; }
-      .hero-box { padding: 2.8rem 1.4rem; }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .profile-circle {
+        width: 220px;
+        height: 220px;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
-
 <header>
   <div class="nav">
     <div class="nav-left">CHAERYEON</div>
-    <div class="nav-right">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Project</a>
-      <a href="board.html">Board</a>
-    </div>
+    <nav class="nav-right">
+      <a href="index.html" class="active">home</a>
+      <a href="about.html">about</a>
+      <a href="projects.html">project</a>
+      <a href="board.html">board</a>
+    </nav>
   </div>
 </header>
 
 <main>
-  <div class="hero-box">
-    <div class="title">Chaeryeon</div>
-    <div class="subtitle">
-      Robotics · Computer Vision · Autonomy  
-    </div>
+  <div class="hero-wrapper">
+    <section class="hero">
+      <!-- 왼쪽: 프로필 동그라미 -->
+      <div class="profile-circle">
+        <!-- 사진 쓰고 싶으면 아래 한 줄만 남기고 src 바꿔 쓰면 됨 -->
+        <!-- <img src="https://이미지주소" alt="profile" /> -->
+        <div class="profile-initial">CR</div>
+      </div>
 
-    <div class="btn-row">
-      <a href="projects.html" class="btn btn-primary">프로젝트 보러가기</a>
-      <a href="about.html" class="btn btn-ghost">About me</a>
-    </div>
+      <!-- 오른쪽: 텍스트 -->
+      <div>
+        <div class="hero-text-topline">hi, i'm chaeryeon 👋</div>
+        <h1 class="hero-title">
+          I'm into <span>Robotics & CV</span>.
+        </h1>
+        <p class="hero-subtitle">
+          ROS2 기반 자율주행 순찰 로봇과 화재 감지 시스템을 만들고 있습니다.
+        </p>
+
+        <ul class="hero-list">
+          <li><span class="dot"></span><span>SLAM / Navigation2 / Patrol System 구축</span></li>
+          <li><span class="dot"></span><span>FastAPI · WebSocket 기반 웹 대시보드 연동</span></li>
+          <li><span class="dot"></span><span>YOLOv8 기반 PPE 감지 실험</span></li>
+        </ul>
+
+        <div class="hero-buttons">
+          <a href="projects.html" class="btn btn-primary">프로젝트 보러가기</a>
+          <a href="about.html" class="btn btn-ghost">About me</a>
+        </div>
+      </div>
+    </section>
   </div>
 </main>
 
 <footer>
   © 2025 Chaeryeon
 </footer>
-
 </body>
 </html>
