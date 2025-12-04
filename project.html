@@ -14,44 +14,64 @@
     <nav class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
-      <a href="projects.html">Project</a>
+      <a href="project.html">Project</a>
       <a href="board.html">board</a>
     </nav>
   </div>
 </header>
 
-<main class="project-container">
+<main class="project-page">
 
-  <!-- 왼쪽 화살표 -->
-  <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+  <div class="project-carousel">
 
-  <!-- 슬라이드 전체 -->
-  <div class="slider">
+    <!-- 왼쪽 화살표 -->
+    <button class="project-arrow left" type="button" onclick="prevProject()">
+      &#10094;
+    </button>
 
-    <!-- 1번 슬라이드 : 자율주행 로봇 -->
-    <div class="slide active">
-      <img src="images/robot_project.jpg" class="project-img">
-      <h2>자율주행 순찰 로봇 시스템</h2>
-      <p>
-        SLAM · Navigation2 · Patrol System 기반의 실내 자율주행 로봇.  
-        FastAPI · WebSocket 서버와 연동하여 웹 대시보드에서 실시간 상태를 모니터링하는 시스템.
-      </p>
+    <!-- 카드들 -->
+    <div class="project-track">
+      <!-- 1. 자율주행 로봇 -->
+      <article class="project-card center">
+        <div class="project-image" style="background-image: url('images/project-robot.jpg');"></div>
+        <div class="project-info">
+          <h2>ROS2 자율주행 순찰 로봇</h2>
+          <p class="project-sub">
+            SLAM · Navigation2 · Patrol System · FastAPI · WebSocket
+          </p>
+          <p class="project-desc">
+            실내 지도를 구축하고, 저장된 웨이포인트를 따라 순찰하며
+            웹 대시보드에서 상태를 모니터링할 수 있는 자율주행 순찰 로봇입니다.
+          </p>
+          <!-- 필요하면 상세 페이지 링크로 바꿔 -->
+          <!-- <a href="project-fire-robot.html" class="project-btn">자세히 보기</a> -->
+        </div>
+      </article>
+
+      <!-- 2. PPE 감지 -->
+      <article class="project-card right-side">
+        <div class="project-image" style="background-image: url('images/project-ppe.jpg');"></div>
+        <div class="project-info">
+          <h2>PPE 착용 감지 시스템</h2>
+          <p class="project-sub">
+            YOLOv8 · Computer Vision · 실시간 스트림 분석
+          </p>
+          <p class="project-desc">
+            작업자의 안전모·조끼 착용 여부를 실시간으로 감지하고
+            착용률을 집계해 CSV로 기록하는 시스템입니다.
+          </p>
+        </div>
+      </article>
+
+      <!-- 나중에 프로젝트 더 추가하고 싶으면 여기 아래에 카드 복붙해서 늘리면 됨 -->
     </div>
 
-    <!-- 2번 슬라이드 : PPE 감지 -->
-    <div class="slide">
-      <img src="images/ppe_project.jpg" class="project-img">
-      <h2>PPE 착용 감지 시스템</h2>
-      <p>
-        YOLOv8 기반 안전모·조끼 착용 여부 판단 모델 구현.  
-        실시간 스트림 분석 및 알림 기능 포함.
-      </p>
-    </div>
+    <!-- 오른쪽 화살표 -->
+    <button class="project-arrow right" type="button" onclick="nextProject()">
+      &#10095;
+    </button>
 
   </div>
-
-  <!-- 오른쪽 화살표 -->
-  <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 
 </main>
 

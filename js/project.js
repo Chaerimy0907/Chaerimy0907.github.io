@@ -1,17 +1,34 @@
-let index = 0;
-const slides = document.querySelectorAll(".slide");
+// project.js
 
-function showSlide(n) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[n].classList.add("active");
+let currentIndex = 0;
+const cards = document.querySelectorAll(".project-card");
+
+function updateCards() {
+  const last = cards.length - 1;
+  const prev = (currentIndex - 1 + cards.length) % cards.length;
+  const next = (currentIndex + 1) % cards.length;
+
+  cards.forEach((card, idx) => {
+    card.classList.remove("center", "left-side", "right-side");
+    if (idx === currentIndex) {
+      card.classList.add("center");
+    } else if (idx === prev) {
+      card.classList.add("left-side");
+    } else if (idx === next) {
+      card.classList.add("right-side");
+    }
+  });
 }
 
-function nextSlide() {
-  index = (index + 1) % slides.length;
-  showSlide(index);
+function nextProject() {
+  currentIndex = (currentIndex + 1) % cards.length;
+  updateCards();
 }
 
-function prevSlide() {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
+function prevProject() {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  updateCards();
 }
+
+// 처음 로드될 때 상태 한 번 맞추기
+updateCards();
