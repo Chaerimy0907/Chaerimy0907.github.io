@@ -205,3 +205,84 @@ footer {
     justify-content: center;
   }
 }
+
+/* ================== ABOUT PAGE ================== */
+
+.about-section {
+  width: 100%;
+  min-height: calc(100vh - 64px - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-wrap {
+  max-width: 900px;
+  width: 100%;
+  margin: 3rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(148,163,209,0.25);
+  padding: 2.2rem 2.4rem 2.5rem;
+}
+
+.about-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.4rem;
+}
+
+.about-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.about-sub {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1.8rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.8rem;
+}
+
+.about-grid-bottom {
+  margin-top: 1.6rem;
+}
+
+.about-block h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.about-block ul {
+  list-style: none;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.about-block li {
+  margin-bottom: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .about-card {
+    padding: 2rem 1.6rem 2.2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
