@@ -78,7 +78,8 @@ function openModalFromCard(card) {
   if (skills) {
     skills
       .split("\n")
-      .map((s) => s.length > 0)
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0)
       .forEach((line) => {
         const li = document.createElement("li");
         li.textContent = line.replace(/^-+\s*/, "");
@@ -110,6 +111,7 @@ function closeModal() {
 
 document.addEventListener("DOMContentLoaded", () => {
   cards = document.querySelectorAll(".project-card");
+  currentIndex = 0;
   updateCards();
 
   modal           = document.getElementById("project-modal");
@@ -118,10 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
   modalDesc       = document.getElementById("modal-desc");
   modalSkillsList = document.getElementById("modal-skills-list");
   modalGithub     = document.getElementById("modal-github");
-  modalImage      = document.getElementById(".project-modal-image");
+  modalImage      = document.querySelector(".project-modal-image");
 
   const closeBtn = document.querySelector(".project-modal-close");
-
   if (closeBtn) {
     closeBtn.addEventListener("click", closeModal);
   }
