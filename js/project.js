@@ -14,15 +14,20 @@ function updateCards() {
     // 먼저 전부 리셋
     card.classList.remove("center", "left-side", "right-side", "hidden");
 
+    card.style.order = 99;
+
     if (idx === currentIndex) {
       // 가운데 큰 카드
       card.classList.add("center");
+      card.style.order = 1;
     } else if (idx === leftIndex) {
       // 왼쪽에 살짝 보이는 카드
       card.classList.add("left-side");
+      card.style.order = 0;
     } else if (idx === rightIndex) {
       // 오른쪽에 살짝 보이는 카드
       card.classList.add("right-side");
+      card.style.order = 2;
     } else {
       // 그 외 카드들은 화면에서 숨김
       card.classList.add("hidden");
