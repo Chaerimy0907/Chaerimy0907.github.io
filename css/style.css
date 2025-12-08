@@ -214,19 +214,26 @@ footer {
 
 .about-page {
   width: 100%;
-  padding: 4rem 0 5rem;
+  /* 위/아래 여백 줄이기 */
+  padding: 2.4rem 0 3rem;
   background: transparent;
+
+  /* 화면 한가운데 배치 + 높이 강제 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px - 70px); /* 헤더+푸터 빼고 남은 영역에 맞춤 */
 }
 
 .about-inner {
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.8rem;              /* 동그라미랑 카드 사이 간격 줄이기 */
 }
 
 /* 위에 동그라미 프로필 */
@@ -237,12 +244,12 @@ footer {
 }
 
 .about-photo {
-  width: 230px;
-  height: 230px;
+  width: 210px;            /* 살짝 줄여서 전체 높이 감소 */
+  height: 210px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   background: linear-gradient(135deg, #4f46e5, #6366f1);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.25);
   overflow: hidden;
 }
 
@@ -258,51 +265,51 @@ footer {
 .about-right {
   width: 100%;
   background: #ffffff;
-  border-radius: 24px;
-  padding: 2.2rem 2.6rem;
-  box-shadow: 0 18px 45px rgba(148, 163, 209, 0.4);
+  border-radius: 22px;
+  padding: 1.8rem 2.1rem;   /* 패딩 줄이기 */
+  box-shadow: 0 16px 40px rgba(148, 163, 209, 0.35);
   border: 1px solid #e5e7f5;
 }
 
 /* 블럭 공통 */
 .about-block {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.1rem;    /* 블럭 사이 여백 축소 */
 }
 
 .about-block + .about-block {
-  padding-top: 1.3rem;
+  padding-top: 0.9rem;
   border-top: 1px dashed #e5e7f5;
 }
 
 .about-heading {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: #111827;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .about-kor {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #9ca3af;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.45rem;
 }
 
 .about-text {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #4b5563;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* 리스트 (학력 / 자격증 / 스킬 등) */
 .about-list {
   list-style: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #4b5563;
 }
 
 .about-list li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .about-list li strong {
@@ -315,54 +322,61 @@ footer {
 .tool-groups {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.9rem;              /* 그룹 사이 간격 줄이기 */
 }
 
 .tool-group-title {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
   color: #374151;
 }
 
 .tool-icon-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.65rem;             /* 아이콘 사이 간격 축소 */
 }
 
 .tool-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 82px;
-  font-size: 0.78rem;
+  width: 74px;              /* 폭 줄여서 더 많이 한 줄에 */
+  font-size: 0.76rem;
   color: #4b5563;
   text-align: center;
 }
 
 .tool-icon img {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border-radius: 14px;
   background: #f3f4ff;
   border: 1px solid #e5e7ff;
-  padding: 6px;
+  padding: 5px;
   object-fit: contain;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 /* 반응형 */
 @media (max-width: 900px) {
+  .about-page {
+    padding: 2rem 0 2.5rem;
+    min-height: auto;       /* 모바일에선 그냥 자연스럽게 스크롤 */
+    align-items: flex-start;
+  }
+
   .about-inner {
     padding: 0 1.6rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .about-right {
-    padding: 1.8rem 1.5rem;
+    padding: 1.7rem 1.4rem;
   }
 }
+
 
 /* ========================
    Project page carousel
