@@ -104,7 +104,6 @@ main {
   padding: 32px 28px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   overflow: hidden;
 }
@@ -144,11 +143,8 @@ main {
 }
 
 .profile-card-footer {
-  width: 100%;
-  margin-top: 26px;
-  padding: 14px 0;
   background: #ffffff;
-  border-radius: 0 0 36px 36px;
+  height: 66px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +158,6 @@ main {
 .profile-card-footer img {
   width: 26px;
   height: 26px;
-  object-fit: contain;
   opacity: 0.9;
 }
 
