@@ -282,7 +282,12 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e5e7f5;
+  font-size: 0.8rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .contact-icon {
@@ -299,11 +304,11 @@ footer {
 }
 
 .contact-icon.github {
-  background-image: url("images/github.svg");
+  background-image: url("../images/github.svg");
 }
 
 .contact-icon.email {
-  background-image: url("images/email.svg");
+  background-image: url("../images/email.svg");
 }
 
 .contact-text {
@@ -315,6 +320,11 @@ footer {
   transform: translateY(-1px);
   background: #ffffff;
   box-shadow: 0 8px 18px rgba(148, 163, 209, 0.35);
+}
+
+.contact-item:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(148, 163, 209, 0.25);
 }
 
 .contact-label {
