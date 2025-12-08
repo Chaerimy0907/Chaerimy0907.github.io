@@ -484,6 +484,17 @@ footer {
   display: none;
 }
 
+.side-card .title,
+.side-card .desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-card .desc {
+  display: none;
+}
+
 /* 필요하면 버튼 쓸 때 */
 .project-btn {
   display: inline-block;
