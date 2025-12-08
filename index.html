@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>Chaeryeon | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박채련 | Robotics Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-<header>
-  <div class="nav">
-    <div class="nav-left">CR</div>
-    <nav class="nav-right">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="project.html">Project</a>
-      <a href="board.html">board</a>
-    </nav>
-  </div>
-</header>
 
-<main>
-  <section class="home-section">
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">P. R. Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="#project">PROJECT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="profile-wrap">
-      <div class="profile-circle">
-        <!-- 원하는 프로필 이미지 URL로 교체 가능 -->
-        <img src="images/profile.png" alt="profile" />
-      </div>
-
-      <div class="profile-text">
-        <h2>안녕하세요! <span class="name">박채련입니다 👋</span></h2>
-        <h3>Robotics · Computer Vision Developer</h3>
-
-        <ul class="info-list">
-          <li>⚙️ ROS2 기반 자율주행 / SLAM / Navigation2 구축</li>
-          <li>🤖 Patrol System 설계 & 웹 대시보드 연동</li>
-          <li>🧪 YOLOv8 기반 PPE 감지</li>
-        </ul>
-
-        <div class="home-buttons">
-          <a class="btn-primary" href="project.html">프로젝트 보러가기</a>
-          <a class="btn-secondary" href="about.html">About me</a>
+    <section id="home" class="section home-section">
+        <h2 class="section-header">1. HOME</h2>
+        <div class="home-content-box">
+            <div class="profile-area">
+                <div class="profile-circle">사진</div>
+                <div class="intro-text">
+                    <h1>안녕하세요! 박채련입니다</h1>
+                    <p class="role-title">Robotics Developer</p>
+                    <p class="summary-text">진행했던 프로젝트 요약: 로봇 공학 분야에서 3년간의 경력을 바탕으로...</p>
+                    <div class="cta-buttons">
+                        <a href="#project" class="cta-button primary">프로젝트 보러 가기</a>
+                        <a href="#about" class="cta-button secondary">About Me</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-  </section>
-</main>
+    <section id="about" class="section about-section">
+        <h2 class="section-header">2. ABOUT ME</h2>
+        <div class="about-grid">
+            <div class="about-card"><h3>About Me (자기소개)</h3><p>개발자로서의 비전과 강점을 소개합니다.</p></div>
+            <div class="about-card"><h3>Education (학력 및 수료)</h3><p>타임라인 형태로 주요 학력/수료 내용을 표시합니다.</p></div>
+            <div class="about-card"><h3>Certificate (자격증)</h3><p>취득 자격증 목록을 정리합니다.</p></div>
+            <div class="about-card"><h3>Skills & Tools</h3><p>Progress Bar를 사용하여 사용 가능한 기술을 표시합니다.</p></div>
+        </div>
+    </section>
 
-<footer>
-  © 2025 Chaeryeon
-</footer>
+    <section id="project" class="section project-section">
+        <h2 class="section-header">3. PROJECT</h2>
+        <div class="project-container">
+            <div class="main-project-wrap">
+                <div class="project-nav-arrow left-arrow">◀ 다른 프로젝트</div>
+                <div class="main-project-box">
+                    <h3>메인 프로젝트</h3>
+                    <p>간단한 요약: 프로젝트의 핵심 목표와 성과를 간결하게 설명합니다.</p>
+                </div>
+                <div class="project-nav-arrow right-arrow">다른 프로젝트 ▶</div>
+            </div>
 
+            <div class="other-projects-grid">
+                <div class="project-card">Project A</div>
+                <div class="project-card">Project B</div>
+                <div class="project-card">Project C</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 박채련 Portfolio. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
