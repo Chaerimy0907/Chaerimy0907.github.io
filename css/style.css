@@ -214,15 +214,13 @@ footer {
 
 .about-page {
   width: 100%;
-  /* 위/아래 여백 줄이기 */
-  padding: 2.4rem 0 3rem;
   background: transparent;
+  min-height: calc(100vh - 64px - 70px);
 
-  /* 화면 한가운데 배치 + 높이 강제 */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 64px - 70px); /* 헤더+푸터 빼고 남은 영역에 맞춤 */
+  padding: 2rem 0 2.4rem;
 }
 
 .about-inner {
@@ -230,26 +228,39 @@ footer {
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.8rem;              /* 동그라미랑 카드 사이 간격 줄이기 */
 }
 
-/* 위에 동그라미 프로필 */
+/* 큰 카드 한 장 */
+.about-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(148, 163, 209, 0.4);
+  border: 1px solid #e5e7f5;
+  padding: 1.8rem 2.2rem;
+}
+
+/* ── 상단: 사진 + 연락처 ─────────────────── */
+
+.about-top {
+  display: flex;
+  align-items: center;
+  column-gap: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
 .about-left {
+  flex: 0 0 180px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .about-photo {
-  width: 210px;            /* 살짝 줄여서 전체 높이 감소 */
-  height: 210px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   padding: 8px;
   background: linear-gradient(135deg, #4f46e5, #6366f1);
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.28);
   overflow: hidden;
 }
 
@@ -261,29 +272,29 @@ footer {
   display: block;
 }
 
+/* 연락처 카드 */
 .about-contact {
-  margin-top: 1.2rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  width: 260px;
 }
 
 .contact-item {
   display: flex;
   flex-direction: column;
-  padding: 0.65rem 0.8rem;
+  padding: 0.55rem 0.8rem;
   border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #eef0f6;
-  box-shadow: 0 8px 18px rgba(148, 163, 209, 0.25);
-  font-size: 0.75rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: #f9fafb;
+  border: 1px solid #e5e7f5;
+  font-size: 0.8rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .contact-item:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(148, 163, 209, 0.35);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(148, 163, 209, 0.35);
 }
 
 .contact-label {
@@ -297,38 +308,42 @@ footer {
   word-break: break-all;
 }
 
-/* 아래 내용 카드 */
-.about-right {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 1.8rem 2.1rem;   /* 패딩 줄이기 */
-  box-shadow: 0 16px 40px rgba(148, 163, 209, 0.35);
-  border: 1px solid #e5e7f5;
+/* ── 하단: 왼쪽 정보 / 오른쪽 Tools ─────────────────── */
+
+.about-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
+  column-gap: 2rem;
+  align-items: flex-start;
 }
 
-/* 블럭 공통 */
+/* 왼쪽 텍스트 정보 */
+.about-info {
+  font-size: 0.9rem;
+}
+
+/* 공통 블럭 */
 .about-block {
-  margin-bottom: 1.1rem;    /* 블럭 사이 여백 축소 */
+  margin-bottom: 1rem;
 }
 
 .about-block + .about-block {
-  padding-top: 0.9rem;
+  padding-top: 0.8rem;
   border-top: 1px dashed #e5e7f5;
 }
 
 .about-heading {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #111827;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
 }
 
 .about-kor {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9ca3af;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.4rem;
 }
 
 .about-text {
@@ -337,7 +352,6 @@ footer {
   line-height: 1.6;
 }
 
-/* 리스트 (학력 / 자격증 / 스킬 등) */
 .about-list {
   list-style: none;
   font-size: 0.88rem;
@@ -354,65 +368,89 @@ footer {
   margin-right: 6px;
 }
 
+/* 오른쪽 Tools */
+.about-tools {
+  font-size: 0.88rem;
+}
+
 /* Skills & Tools 영역 */
 .tool-groups {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;              /* 그룹 사이 간격 줄이기 */
+  gap: 0.8rem;
 }
 
 .tool-group-title {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
   color: #374151;
 }
 
 .tool-icon-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;             /* 아이콘 사이 간격 축소 */
+  gap: 0.55rem;
 }
 
+/* 툴 아이콘 – 배경 없이 깔끔하게 */
 .tool-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 74px;              /* 폭 줄여서 더 많이 한 줄에 */
-  font-size: 0.76rem;
+  width: 72px;
+  font-size: 0.75rem;
   color: #4b5563;
   text-align: center;
 }
 
 .tool-icon img {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: #f3f4ff;
-  border: 1px solid #e5e7ff;
-  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
   object-fit: contain;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
+}
+
+/* 예전에 쓰던 .tool-icon-shape가 남아있으면 최소 영향만 */
+.tool-icon-shape {
+  display: none;
 }
 
 /* 반응형 */
 @media (max-width: 900px) {
   .about-page {
-    padding: 2rem 0 2.5rem;
-    min-height: auto;       /* 모바일에선 그냥 자연스럽게 스크롤 */
+    min-height: auto;
     align-items: flex-start;
+    padding: 1.5rem 0 2.5rem;
   }
 
   .about-inner {
-    padding: 0 1.6rem;
-    gap: 1.5rem;
+    padding: 0 1.5rem;
   }
 
-  .about-right {
-    padding: 1.7rem 1.4rem;
+  .about-card {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .about-contact {
+    width: 100%;
+  }
+
+  .about-bottom {
+    grid-template-columns: 1fr;
+    row-gap: 1.2rem;
   }
 }
-
 
 /* ========================
    Project page carousel
