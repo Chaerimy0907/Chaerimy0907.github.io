@@ -52,6 +52,44 @@ function prevProject() {
 // 페이지 로드 후 DOM 준비되면 실행
 document.addEventListener("DOMContentLoaded", () => {
   cards = document.querySelectorAll(".project-card");
+
+  cards.forEach(card => {
+    const info = card.querySelector(".project-info");
+    if (!info) return;
+
+    const team = card.dataset.team;
+    const github  = card.dataset.github;
+
+    if (team) {
+      const meta = document.createElement("div");
+      meta.className = "project-meta";
+
+      const span = document.createElement("span");
+      span.className = "meta-item";
+      span.textContent = team;
+
+      meta.appendChild(span);
+
+      const sub = info.querySelector(".project-sub");
+      if (sub) {
+        info.insertBefore(meta, sub);
+      } else {
+        info.insertBefore(meta, info.firstChild);
+      }
+    }
+
+    if (github) {
+      const link = document.createElement("a");
+      link.className = "project-github";
+      link.href = github;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "GitHub Repository";
+
+      info.appendChild(link);
+    }
+  })
+
   currentIndex = 0; // 처음에는 0번(메인 프로젝트)을 가운데로
   updateCards();
 });

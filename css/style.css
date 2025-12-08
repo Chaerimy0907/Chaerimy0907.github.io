@@ -644,6 +644,51 @@ main.project-page {
   color: #ffffff;
 }
 
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.meta-item::before {
+  content: "👥";
+  margin-right: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.project-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--blue-main);
+  font-weight: 500;
+}
+
+.project-github::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("../images/github.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.project-github:hover {
+  text-decoration: underline;
+}
+
 /* 반응형 대충 처리 */
 @media (max-width: 900px) {
   .project-carousel {

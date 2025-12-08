@@ -31,34 +31,59 @@
 
     <!-- 카드들 -->
     <div class="project-track">
-      <!-- 1. 자율주행 로봇 -->
-      <article class="project-card">
-        <div class="project-image" style="background-image: url('images/project-robot.jpg');"></div>
+      <!-- 1. 화재 감지 자율주행 순찰 로봇 -->
+      <article class="project-card"
+               data-title="화재 감지 자율주행 순찰 로봇"
+               data-team="4인 팀 프로젝트"
+               data-desc="ROS2 기반 SLAM·Navigation2로 실내 지도를 구축하고, 저장된 웨이포인트를 따라 순찰하는 로봇입니다. MQ-2, ENS160 센서로 연기·가스 농도를 감지해 화재 의심 상황을 검출하고, 웹 대시보드에서 알림을 띄우며 순찰을 일시 정지하거나 원점 복귀를 수행할 수 있습니다."
+               data-skills="- ROS2
+      - SLAM
+      - Navigation2
+      - Patrol System
+      - FastAPI
+      - WebSocket"
+               data-github="https://github.com/smartcore102/Yeonhee_smartcore.git">
+
+        <div class="project-image" style="background-image: url('images/patrol.png');"></div>
+
         <div class="project-info">
-          <h2>ROS2 자율주행 순찰 로봇</h2>
+          <h2>ROS2 화재 감지 자율주행 순찰 로봇</h2>
           <p class="project-sub">
             SLAM · Navigation2 · Patrol System · FastAPI · WebSocket
           </p>
           <p class="project-desc">
             실내 지도를 구축하고, 저장된 웨이포인트를 따라 순찰하며
-            웹 대시보드에서 상태를 모니터링할 수 있는 자율주행 순찰 로봇입니다.
+            MQ-2 / ENS160 센서로 화재 의심 상황을 감지하고
+            웹 대시보드에서 알림을 표시하는 자율주행 순찰 로봇입니다.
+
+            자율주행 및 순찰 제어 시스템과 웹 연동을 담당했습니다.
           </p>
-          <!-- 필요하면 상세 페이지 링크로 바꿔 -->
-          <!-- <a href="project-fire-robot.html" class="project-btn">자세히 보기</a> -->
         </div>
       </article>
 
       <!-- 2. PPE 감지 -->
-      <article class="project-card">
-        <div class="project-image" style="background-image: url('images/project-ppe.jpg');"></div>
+      <article class="project-card"
+               data-title="PPE 착용 감지 시스템"
+               data-team="1인 개발"
+               data-desc="YOLOv8 기반 객체 탐지를 사용해 작업자의 안전모 및 조끼 착용 여부를 실시간으로 감지하는 시스템입니다. 영상 스트림에서 인원을 탐지하고 PPE 착용 여부를 분류했으며, 감지 결과를 바탕으로 착용률을 계산해 CSV 파일로 주기적으로 저장했습니다."
+               data-skills="- YOLOv8
+      - Python
+      - OpenCV
+      - Computer Vision
+      - CSV Logging"
+               data-github="https://github.com/Chaerimy0907/ppe_detection.git">
+
+        <div class="project-image" style="background-image: url('images/ppe.jpg');"></div>
+        
         <div class="project-info">
           <h2>PPE 착용 감지 시스템</h2>
           <p class="project-sub">
-            YOLOv8 · Computer Vision · 실시간 스트림 분석
+            YOLOv8 · Computer Vision
           </p>
           <p class="project-desc">
-            작업자의 안전모·조끼 착용 여부를 실시간으로 감지하고
-            착용률을 집계해 CSV로 기록하는 시스템입니다.
+            작업자의 안전모·조끼 착용 여부를 실시간으로 감지하고,
+            감지 결과를 기반으로 착용률을 계산해 CSV로 기록하는
+            안전 관리용 컴퓨터 비전 시스템입니다.
           </p>
         </div>
       </article>
