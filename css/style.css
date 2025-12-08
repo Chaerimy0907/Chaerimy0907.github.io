@@ -329,3 +329,21 @@ footer {
         margin: 0;
     }
 }
+
+/* --- 멀티 페이지 및 활성화 링크 스타일 추가 --- */
+
+/* 현재 페이지의 링크 강조 */
+.nav-links li a.active {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+/* ABOUT ME 섹션에서 카드가 전체 너비를 차지하도록 (Skills & Tools, About Me) */
+.about-card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* HOME 섹션에서 전체 화면 높이를 활용하도록 설정 */
+.home-section.full-page-content {
+    min-height: calc(100vh - 80px); /* 헤더 높이(약 80px)를 제외 */
+}
