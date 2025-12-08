@@ -95,7 +95,7 @@ main {
 
 /* ============= 프로필 카드 ============= */
 .profile-card {
-  width: 360px;
+  width: 400px;
   border-radius: 36px;
 
   background: linear-gradient(135deg, #f6f9fd, #e7eff9);
@@ -108,7 +108,7 @@ main {
 }
 
 .profile-image {
-  width: 200px;
+  width: 250px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -126,14 +126,14 @@ main {
 .profile-card-name::after {
   content: "";
   display: block;
-  width: 56px;
+  width: 100px;
   height: 3px;
   margin: 10px auto 8px;
   background: rgba(111, 144, 184, 0.45)
 }
 
 .profile-card-role {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #6b7280;
   margin-bottom: 0px;
