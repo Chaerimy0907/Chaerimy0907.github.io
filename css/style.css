@@ -705,3 +705,150 @@ main.project-page {
     display: none; /* 화면 좁으면 양옆 카드 숨김 */
   }
 }
+
+/* ========================
+   Project detail modal
+   ======================== */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+}
+
+.project-modal.hidden {
+  display: none;
+}
+
+.project-modal-content {
+  max-width: 900px;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+  padding: 1.8rem 2rem 1.8rem;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.35fr);
+  gap: 1.8rem;
+}
+
+/* 닫기 버튼 */
+.project-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.project-modal-close:hover {
+  color: #4b5563;
+}
+
+/* 왼쪽 이미지 */
+.project-modal-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-modal-image {
+  width: 100%;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5ecf6;
+  aspect-ratio: 4 / 3;
+}
+
+/* 오른쪽 내용 */
+.project-modal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.modal-team {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.modal-desc {
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 0.3rem;
+}
+
+.modal-section {
+  margin-top: 0.6rem;
+}
+
+.modal-section h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+.modal-skills-list {
+  list-style: disc;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: #4b5563;
+}
+
+.modal-skills-list li + li {
+  margin-top: 0.15rem;
+}
+
+.modal-links {
+  margin-top: 0.9rem;
+}
+
+.modal-link-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--blue-main);
+  color: var(--blue-main);
+  background: #ffffff;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.modal-link-github:hover {
+  background: var(--blue-main);
+  color: #ffffff;
+  border-color: var(--blue-main);
+}
+
+/* 모달 반응형 */
+@media (max-width: 900px) {
+  .project-modal-content {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.4rem 1.6rem;
+  }
+
+  .project-modal-image {
+    aspect-ratio: 16 / 9;
+  }
+}
