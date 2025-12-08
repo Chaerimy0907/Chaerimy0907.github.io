@@ -442,6 +442,10 @@ footer {
   filter: blur(0.2px);
 }
 
+.project-card.hidden {
+  display: none;
+}
+
 /* 카드 안 이미지 영역 */
 .project-image {
   flex: 0 0 60%;

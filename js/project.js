@@ -1,46 +1,58 @@
 // js/project.js
 
-// 카드 목록
-const cards = document.querySelectorAll(".project-card");
-let currentIndex = 0; // 지금 가운데에 올 카드 인덱스
+let cards;          // 카드 목록
+let currentIndex = 0; // 가운데 큰 카드의 인덱스
 
-// 위치 적용 함수
 function updateCards() {
-  const last = cards.length - 1;
-  const prev = (currentIndex - 1 + cards.length) % cards.length;
-  const next = (currentIndex + 1) % cards.length;
+  const len = cards.length;
+  if (len === 0) return;
+
+  const leftIndex  = (currentIndex - 1 + len) % len; // 왼쪽 작은 카드
+  const rightIndex = (currentIndex + 1) % len;       // 오른쪽 작은 카드
 
   cards.forEach((card, idx) => {
-    // 먼저 상태 초기화
-    card.classList.remove("center", "left-side", "right-side");
+    // 먼저 전부 리셋
+    card.classList.remove("center", "left-side", "right-side", "hidden");
 
     if (idx === currentIndex) {
-      card.classList.add("center");        // 가운데 큰 카드
-    } else if (idx === prev) {
-      card.classList.add("left-side");     // 왼쪽에 살짝 보이는 카드
-    } else if (idx === next) {
-      card.classList.add("right-side");    // 오른쪽에 살짝 보이는 카드
+      // 가운데 큰 카드
+      card.classList.add("center");
+    } else if (idx === leftIndex) {
+      // 왼쪽에 살짝 보이는 카드
+      card.classList.add("left-side");
+    } else if (idx === rightIndex) {
+      // 오른쪽에 살짝 보이는 카드
+      card.classList.add("right-side");
+    } else {
+      // 그 외 카드들은 화면에서 숨김
+      card.classList.add("hidden");
     }
-    // 나머지 카드가 더 생기면(4개 이상) 걔네는 아무 클래스도 안 가지게 됨
   });
 }
 
-// 오른쪽 화살표 → 다음 카드
 function nextProject() {
-  currentIndex = (currentIndex + 1) % cards.length;
+  const len = cards.length;
+  if (len === 0) return;
+  currentIndex = (currentIndex + 1) % len;
   updateCards();
 }
 
-// 왼쪽 화살표 → 이전 카드
 function prevProject() {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+  const len = cards.length;
+  if (len === 0) return;
+  currentIndex = (currentIndex - 1 + len) % len;
   updateCards();
 }
 
+// 페이지 로드 후 DOM 준비되면 실행
+document.addEventListener("DOMContentLoaded", () => {
+  cards = document.querySelectorAll(".project-card");
+  currentIndex = 0; // 처음에는 0번(메인 프로젝트)을 가운데로
+  updateCards();
+});
+
+// (선택) 키보드로도 조작하고 싶으면 같이 사용
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") nextProject();
   if (e.key === "ArrowLeft") prevProject();
 });
-
-// 페이지 처음 로드될 때 한 번 적용
-document.addEventListener("DOMContentLoaded", updateCards);
