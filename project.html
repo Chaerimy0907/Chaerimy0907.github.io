@@ -114,26 +114,30 @@
   <div class="project-modal-content">
     <button type="button" class="project-modal-close">&times;</button>
 
-    <div class="project-modal-left">
-      <div class="project-modal-image"></div>
-    </div>
+    <div id="project-modal-image" class="project-modal-image"></div>
 
-    <div class="project-modal-right">
+    <div class="project-modal-header">
       <h2 id="modal-title" class="modal-title"></h2>
       <p id="modal-team" class="modal-team"></p>
+    </div>
 
-      <p id="modal-desc" class="modal-desc"></p>
+    <div class="project-modal-body">
+      <section class="modal-section">
+        <h3 class="modal-section-title">📌 Description</h3>
+        <p id="modal-desc" class="modal-desc"></p>
+      </section>
 
-      <div class="modal-section">
-        <h3>Skills &amp; Tools</h3>
+      <section class="modal-section">
+        <h3 class="modal-section-title">🛠 Skills &amp; Tools</h3>
         <ul id="modal-skills-list" class="modal-skills-list"></ul>
-      </div>
+      </section>
 
-      <div class="modal-links">
+      <section class="modal-section modal-links">
+        <h3 class=""modal-section-title>🔗 Link</h3>
         <a id="modal-github" href="#" target="_blank" class="modal-link-github">
           GitHub Repository →
         </a>
-      </div>
+      </section>
     </div>
   </div>
 </div>
