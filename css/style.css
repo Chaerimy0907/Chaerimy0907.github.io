@@ -240,14 +240,10 @@ footer {
 .about-top {
   width: 100%;
   display: flex;
-  border-radius: 50%;
-  padding: 8px;
-  background: #ffffff;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
-  overflow: hidden;
-  display: flex;
   align-items: center;
+  column-gap: 2.4rem;
   justify-content: center;
+  margin-bottom: 3.2rem;
 }
 
 .about-left {
@@ -260,10 +256,13 @@ footer {
   width: 220px;                       /* 좀 더 크게 */
   height: 220px;
   border-radius: 50%;
-  padding: 12px;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.32);
+  padding: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-photo img {
