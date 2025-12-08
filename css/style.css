@@ -144,30 +144,32 @@ main {
 }
 
 .profile-card-footer {
-  width: 100%;
-  margin-top: 24px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  width: calc(100% + 56px);
+  margin-top: 26px;
+  padding: 16px 0;
+  background: #ffffff;
+  border-radius: 0 0 36px 36px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .profile-card-footer a {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.22);
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
 }
 
 .profile-card-footer img {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
+  opacity: 0.9;
+}
+
+.profile-card-footer img:hover {
+  opacity: 1;
 }
 
 /* ============= 오른쪽 텍스트 ============= */
