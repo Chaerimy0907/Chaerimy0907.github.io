@@ -243,6 +243,7 @@ footer {
   align-items: center;
   column-gap: 2.4rem;
   justify-content: center;
+  margin-bottom: 3.2rem;
 }
 
 .about-left {
@@ -279,13 +280,35 @@ footer {
 
 .contact-item {
   display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(111, 144, 184, 0.15);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+
+  flex-shrink: 0;
+}
+
+.contact-icon.github {
+  background-image: url("images/github.svg");
+}
+
+.contact-icon.email {
+  background-image: url("images/email.svg");
+}
+
+.contact-text {
+  display: flex;
   flex-direction: column;
-  padding: 0.6rem 1rem;
-  border-radius: 12px;
-  background: #ffffff;
-  border: 1px solid #e5e7f5;
-  font-size: 0.8rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .contact-item:hover {
