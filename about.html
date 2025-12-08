@@ -1,60 +1,195 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박채련 | Portfolio - ABOUT ME</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>About | Chaeryeon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+<header>
+  <div class="nav">
+    <div class="nav-left">CR</div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="project.html">Project</a>
+      <a href="board.html">board</a>
+    </nav>
+  </div>
+</header>
 
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">P. R. Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html" class="active">ABOUT ME</a></li> 
-                <li><a href="project.html">PROJECT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main id="about" class="section about-section">
-        <h2 class="section-header">2. ABOUT ME</h2>
-        
-        <div class="about-grid">
-            <div class="about-card full-width">
-                <h3>자기소개 (About Me)</h3>
-                <p>안녕하세요. Robotics Developer 박채련입니다. 저는 인공지능 기반 로봇 시스템 개발에 깊은 흥미를 가지고 있으며, 특히 센서 데이터 처리와 임베디드 시스템 최적화에 강점을 가지고 있습니다. ... (상세 소개 내용)</p>
-            </div>
-
-            <div class="about-card">
-                <h3>학력 및 수료 (Education)</h3>
-                <ul>
-                    <li>**OO대학교 (2018.03 - 2024.02)** - 컴퓨터공학과 졸업</li>
-                    <li>**OOO 교육 과정 (2024.03 - 2024.08)** - AI 로봇 제어 심화 과정 수료</li>
-                </ul>
-            </div>
-
-            <div class="about-card">
-                <h3>자격증 (Certificate)</h3>
-                <ul>
-                    <li>정보처리기사 (2023.05)</li>
-                    <li>임베디드 시스템 전문가 (2022.11)</li>
-                </ul>
-            </div>
-
-            <div class="about-card full-width">
-                <h3>주요 기술 및 도구 (Skills & Tools)</h3>
-                <p>Python, C++, ROS (Robot Operating System), Linux, Git, TensorFlow</p>
-                </div>
+<main>
+  <section class="about-page">
+    <div class="about-inner">
+      <!-- 왼쪽: 사진 -->
+      <div class="about-left">
+        <div class="about-photo">
+          <!-- 여기 src에 너 사진 경로 넣으면 됨 (예: images/profile.jpg) -->
+          <img src="https://drive.google.com/file/d/1Q_7r6xmc5rY0xsofWCw4lQZ6lfFDcQcG/view?usp=drive_link" alt="Profile photo" />
         </div>
-    </main>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 박채련 Portfolio. All rights reserved.</p>
-    </footer>
-    
+      <!-- 오른쪽: 내용 -->
+      <div class="about-right">
+        <!-- About Me -->
+        <section class="about-block">
+          <h1 class="about-heading">ABOUT ME</h1>
+          <p class="about-kor">자기소개</p>
+          <p class="about-text">
+            안녕하세요. 저는 로봇 분야 개발자가 되고 싶은 박채련입니다.<br>
+            프로젝트를 통해 로봇 소프트웨어 구조와 서버 연동 흐름을 직접 구축해 왔으며, 앞으로 더 깊이 있는 개발자로 성장하고 싶습니다.<br>
+            포트폴리오를 확인해 주셔서 감사합니다.
+          </p>
+        </section>
+
+        <!-- Education -->
+        <section class="about-block">
+          <h2 class="about-heading">EDUCATION</h2>
+          <p class="about-kor">학력 및 수료</p>
+          <ul class="about-list">
+            <!-- 여기 실제 학력/교육 이력으로 바꾸면 됨 -->
+            <li>2025.05 ~ 2025.11 · 스마트 모빌리티 부트캠프 과정 수료</li>
+            <li>2017.02 ~ 2022.02 · 강원대학교 물리학과 / 기계의용공학과</li>
+          </ul>
+        </section>
+
+        <!-- Certificate -->
+        <section class="about-block">
+          <h2 class="about-heading">CERTIFICATE</h2>
+          <p class="about-kor">자격증</p>
+          <ul class="about-list">
+            <!-- 실제 자격증으로 수정 -->
+            <li>전기기사 (2022)</li>
+            <li>전기공사기사 (2022)</li>
+          </ul>
+        </section>
+
+        <!-- Skills & Tools -->
+        <section class="about-block">
+          <h2 class="about-heading">Skills &amp; Tools</h2>
+          <p class="about-kor">다룰 수 있는 도구</p>
+
+          <div class="tool-groups">
+            <!-- 그룹 이름(Basic/Library/Others)은 나중에 바꿔도 됨 -->
+            <div class="tool-group">
+              <div class="tool-group-title">Basic</div>
+              <div class="tool-icon-row">
+                <!-- 아래 아이콘 하나당 ‘이미지 1개’라고 생각하면 됨 -->
+                <div class="tool-icon">
+                  <img src="images/python.png" alt="python">
+                  <span>Python</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/linux.png" alt="linux">
+                  <span>Linux / Ubuntu</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/github.png" alt="github">
+                  <span>Git / GitHub</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Robotics / Framework</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <img src="images/ros2.png" alt="ros2">
+                  <span>ROS2 Humble</span>
+                </div>
+                <div class="tool-icon">
+                  <div class="tool-icon-shape"></div>
+                  <span>SLAM Toolbox</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/cartographer.png" alt="cartographer">
+                  <span>Cartographer</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/nav2.png" alt="nav2">
+                  <span>Navigation2</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/rviz2.png" alt="rviz2">
+                  <span>RViz2</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Backend / Infra</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <img src="images/fastapi.png" alt="fastapi">
+                  <span>FastAPI</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/websocket.png" alt="websocket">
+                  <span>WebSocket</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/uvicorn.png" alt="uvicorn">
+                  <span>Uvicorn</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/ec2.png" alt="ec2">
+                  <span>AWS EC2</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Hardware / Embedded</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <img src="images/raspberrypi.png" alt="raspberrypi">
+                  <span>Raspberry Pi</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/turtlebot3.png" alt="turtlebot3">
+                  <span>TurtleBot3 Waffle Pi</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/arduino.png" alt="arduino">
+                  <span>Arduino</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <div class="tool-group-title">Computer Vision</div>
+              <div class="tool-icon-row">
+                <div class="tool-icon">
+                  <img src="images/opencv.png" alt="opencv">
+                  <span>OpenCV</span>
+                </div>
+                <div class="tool-icon">
+                  <img src="images/yolo.png" alt="yolo">
+                  <span>YOLOv8</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 나중에 실제 아이콘 쓸 때는 .tool-icon-shape 대신 img로 교체하면 됨 -->
+          <!--
+          <div class="tool-icon">
+            <img src="images/python-logo.png" alt="Python" />
+            <span>Python</span>
+          </div>
+          -->
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Chaeryeon
+</footer>
+
 </body>
 </html>

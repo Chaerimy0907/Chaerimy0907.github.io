@@ -1,49 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박채련 | Portfolio - PROJECT</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Project | Chaeryeon</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <!-- 헤더 그대로 유지 -->
+<header>
+  <div class="nav">
+    <div class="nav-left">CR</div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html" class="active">Project</a>
+      <a href="board.html">board</a>
+    </nav>
+  </div>
+</header>
 
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">P. R. Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT ME</a></li>
-                <li><a href="project.html" class="active">PROJECT</a></li>
-            </ul>
-        </nav>
-    </header>
+<main class="project-page">
 
-    <main id="project" class="section project-section">
-        <h2 class="section-header">3. PROJECT</h2>
-        <div class="project-container">
-            
-            <div class="main-project-wrap">
-                <div class="project-nav-arrow left-arrow">◀ 다른 프로젝트</div>
-                <div class="main-project-box">
-                    <h3>[메인] 자율 이동 로봇 경로 계획 시스템 개발</h3>
-                    <p>간단한 요약: SLAM 기반의 경로 계획 알고리즘을 최적화하여 99% 이상의 성공률 달성. (사용 기술: ROS, C++, PCL)</p>
-                    <a href="#" class="cta-button primary small">자세히 보기</a>
-                </div>
-                <div class="project-nav-arrow right-arrow">다른 프로젝트 ▶</div>
-            </div>
+  <div class="project-carousel">
 
-            <div class="other-projects-grid">
-                <div class="project-card"><h4>Project A: 로봇 팔 제어 GUI</h4><p>Python/Tkinter를 이용한 실시간 제어 인터페이스 구축.</p></div>
-                <div class="project-card"><h4>Project B: 드론 비행 시뮬레이터</h4><p>Gazebo 환경에서 PID 제어를 적용한 드론 시뮬레이션.</p></div>
-                <div class="project-card"><h4>Project C: 센서 데이터 분석 툴</h4><p>대용량 LiDAR/IMU 데이터를 시각화하고 분석하는 웹 기반 툴.</p></div>
-                </div>
+    <!-- 왼쪽 화살표 -->
+    <button class="project-arrow left" type="button" onclick="prevProject()">
+      &#10094;
+    </button>
+
+    <!-- 카드들 -->
+    <div class="project-track">
+      <!-- 1. 자율주행 로봇 -->
+      <article class="project-card center">
+        <div class="project-image" style="background-image: url('images/project-robot.jpg');"></div>
+        <div class="project-info">
+          <h2>ROS2 자율주행 순찰 로봇</h2>
+          <p class="project-sub">
+            SLAM · Navigation2 · Patrol System · FastAPI · WebSocket
+          </p>
+          <p class="project-desc">
+            실내 지도를 구축하고, 저장된 웨이포인트를 따라 순찰하며
+            웹 대시보드에서 상태를 모니터링할 수 있는 자율주행 순찰 로봇입니다.
+          </p>
+          <!-- 필요하면 상세 페이지 링크로 바꿔 -->
+          <!-- <a href="project-fire-robot.html" class="project-btn">자세히 보기</a> -->
         </div>
-    </main>
+      </article>
 
-    <footer>
-        <p>&copy; 2025 박채련 Portfolio. All rights reserved.</p>
-    </footer>
+      <!-- 2. PPE 감지 -->
+      <article class="project-card right-side">
+        <div class="project-image" style="background-image: url('images/project-ppe.jpg');"></div>
+        <div class="project-info">
+          <h2>PPE 착용 감지 시스템</h2>
+          <p class="project-sub">
+            YOLOv8 · Computer Vision · 실시간 스트림 분석
+          </p>
+          <p class="project-desc">
+            작업자의 안전모·조끼 착용 여부를 실시간으로 감지하고
+            착용률을 집계해 CSV로 기록하는 시스템입니다.
+          </p>
+        </div>
+      </article>
+
+      <!-- 나중에 프로젝트 더 추가하고 싶으면 여기 아래에 카드 복붙해서 늘리면 됨 -->
+    </div>
+
+    <!-- 오른쪽 화살표 -->
+    <button class="project-arrow right" type="button" onclick="nextProject()">
+      &#10095;
+    </button>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 Chaeryeon</p>
+</footer>
+
+<script src="js/project.js"></script>
 </body>
 </html>

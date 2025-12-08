@@ -1,349 +1,501 @@
-/* Variables for Color Palette */
+/* ============= 기본 색상 ============= */
 :root {
-    --color-primary: #486581; /* 인디고 블루 (메인 색상) */
-    --color-accent: #647d96; /* 밝은 인디고 (강조 색상) */
-    --color-background: #F7F9FB; /* 밝은 배경 */
-    --color-text-dark: #333333;
-    --color-text-light: #ffffff;
-    --color-border: #cccccc;
+  --indigo: #4f46e5;
+  --indigo-soft: #6366f1;
+  --text-main: #111827;
+  --text-sub: #6b7280;
 }
 
-/* Base Styles */
+/* ============= 리셋 ============= */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.6;
-    color: var(--color-text-dark);
-    background-color: var(--color-background);
+  /*font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;*/
+  background: #f3f5f9;
+  color: var(--text-main);
 }
 
+/* ============= 링크 ============= */
 a {
-    text-decoration: none;
-    color: var(--color-primary);
+  text-decoration: none;
+  color: inherit;
 }
 
-/* --- Header & Navigation --- */
-.header {
-    background-color: var(--color-primary);
-    padding: 1rem 0;
-    position: sticky; /* 상단 고정 */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* ============= 헤더 ============= */
+header {
+  width: 100%;
+  background: var(--indigo);
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text-light);
+.nav-left {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
+.nav-right a {
+  margin-left: 1.4rem;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text-sub);
 }
 
-.nav-links li a {
-    color: var(--color-text-light);
-    padding: 0.5rem 1rem;
-    font-weight: 400;
-    transition: background-color 0.3s;
-    border-radius: 5px;
+.nav-right a:hover {
+  background: #f3f4ff;
+  color: var(--indigo-soft);
 }
 
-.nav-links li a:hover {
-    background-color: var(--color-accent);
+.nav-right a.active {
+  background: var(--indigo);
+  color: #ffffff;
 }
 
-/* --- Section Layout --- */
-.section {
-    padding: 80px 20px;
-    min-height: 100vh; /* 화면 크기 활용 */
-    max-width: 1200px;
-    margin: 0 auto;
+/* ============= 메인 섹션 ============= */
+main {
+  min-height: calc(100vh - 64px - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.section-header {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 60px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid var(--color-accent);
-    display: inline-block;
-}
-
-/* --- 1. HOME Section Styling --- */
 .home-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  width: 100%;
 }
 
-.home-content-box {
-    width: 100%;
-    padding: 40px;
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.profile-wrap {
+  max-width: 900px;
+  margin: 4rem auto 0;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
-.profile-area {
-    display: flex;
-    flex-direction: column; /* 기본은 세로 쌓기 */
-    align-items: center;
-}
-
+/* ============= 프로필 동그라미 ============= */
 .profile-circle {
-    width: 150px;
-    height: 150px;
-    border: 4px solid var(--color-primary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 20px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.intro-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: var(--color-text-dark);
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.role-title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--color-accent);
-    margin-bottom: 20px;
+/* ============= 오른쪽 텍스트 ============= */
+.profile-text {
+  width: 450px;
 }
 
-.summary-text {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
+.profile-text h2 {
+  font-size: 2.0rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
 }
 
-.cta-buttons a {
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
-    display: inline-block;
+.profile-text .name {
+  color: var(--indigo-soft);
 }
 
-.cta-button.primary {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
+.profile-text h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  margin-bottom: 1.1rem;
 }
 
-.cta-button.secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+.info-list {
+  list-style: none;
+  font-size: 1.0rem;
+  color: var(--text-sub);
+  margin-bottom: 1.5rem;
 }
 
-.cta-button.primary:hover {
-    background-color: var(--color-accent);
-    transform: translateY(-2px);
+.info-list li {
+  margin-bottom: 0.3rem;
 }
 
-.cta-button.secondary:hover {
-    background-color: var(--color-background);
+/* ============= 버튼 ============= */
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-/* --- 2. ABOUT ME Section Styling --- */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
+.btn-primary,
+.btn-secondary {
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
 
-.about-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid var(--color-accent);
-    transition: transform 0.3s;
+.btn-primary {
+  background: linear-gradient(135deg, var(--indigo), var(--indigo-soft));
+  color: #ffffff;
 }
 
-.about-card:hover {
-    transform: translateY(-5px);
+.btn-primary:hover {
+  filter: brightness(1.05);
 }
 
-.about-card h3 {
-    color: var(--color-primary);
-    margin-bottom: 10px;
+.btn-secondary {
+  background: #ffffff;
+  border-color: var(--indigo);
+  color: var(--indigo-soft);
 }
 
-/* --- 3. PROJECT Section Styling --- */
-.project-container {
-    padding: 20px;
+.btn-secondary:hover {
+  background: #f3f4ff;
 }
 
-.main-project-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--color-primary); /* 첨부 이미지의 테두리 반영 */
-    margin-bottom: 50px;
-    padding: 20px 0;
-    min-height: 250px;
-}
-
-.main-project-box {
-    flex-grow: 1;
-    text-align: center;
-    padding: 20px;
-}
-
-.main-project-box h3 {
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    margin-bottom: 15px;
-}
-
-.project-nav-arrow {
-    width: 150px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--color-primary);
-    transition: background-color 0.3s;
-}
-
-.project-nav-arrow:hover {
-    background-color: rgba(72, 101, 129, 0.1);
-}
-
-.other-projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--color-accent);
-    transition: opacity 0.3s;
-}
-
-/* --- Footer --- */
+/* ============= 푸터 ============= */
 footer {
+  text-align: center;
+  padding: 1.5rem 0 2rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ============= 반응형 ============= */
+@media (max-width: 900px) {
+  main {
+    align-items: flex-start;
+  }
+
+  .profile-wrap {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+
+  .profile-text {
+    max-width: 420px;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
 }
 
-/* --- Responsive Design (반응형: 스마트폰 및 태블릿) --- */
-@media (min-width: 768px) {
-    /* HOME 섹션: 768px 이상에서는 사진과 텍스트를 좌우로 배치 */
-    .profile-area {
-        flex-direction: row;
-        text-align: left;
-        gap: 50px;
-        max-width: 800px;
-    }
-    .profile-circle {
-        margin-bottom: 0;
-        flex-shrink: 0; /* 크기 유지 */
-    }
-    .intro-text {
-        padding-top: 10px;
-    }
-    .main-project-box {
-        max-width: 60%;
-    }
+/* ================== ABOUT PAGE ================== */
+
+.about-page {
+  width: 100%;
+  padding: 3rem 0 4rem;
+  background: transparent;
 }
 
-@media (max-width: 767px) {
-    /* 스마트폰용 스타일 */
-    .nav-links {
-        /* 스마트폰에서 메뉴 링크 숨기거나, 필요시 햄버거 메뉴로 변경 가능 */
-        /* display: none; */ 
-    }
-    .nav-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .nav-links {
-        width: 100%;
-        justify-content: space-around;
-    }
-    .section {
-        padding: 50px 15px;
-        min-height: auto;
-    }
-    .section-header {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    .main-project-wrap {
-        flex-direction: column;
-        min-height: auto;
-    }
-    .project-nav-arrow {
-        width: 100%;
-        padding: 10px;
-        /* 좌우 화살표를 상하 버튼처럼 보이게 */
-        border-top: 1px solid var(--color-primary);
-    }
-    .right-arrow {
-        border-bottom: 1px solid var(--color-primary);
-    }
-    .cta-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .cta-buttons a {
-        margin: 0;
-    }
+.about-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: flex-start;
+  column-gap: 10rem; /* 사진과 내용 사이 여백 */
 }
 
-/* --- 멀티 페이지 및 활성화 링크 스타일 추가 --- */
-
-/* 현재 페이지의 링크 강조 */
-.nav-links li a.active {
-    background-color: var(--color-accent);
-    color: var(--color-text-light);
+/* 왼쪽 사진 영역 */
+.about-left {
+  flex: 0 0 260px;              /* 왼쪽 컬럼 폭 */
+  display: flex;
+  justify-content: center;
 }
 
-/* ABOUT ME 섹션에서 카드가 전체 너비를 차지하도록 (Skills & Tools, About Me) */
-.about-card.full-width {
-    grid-column: 1 / -1;
+.about-photo {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;           /* ★ 동그라미 유지 */
+  padding: 8px;                 /* 테두리 여백 */
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
 }
 
-/* HOME 섹션에서 전체 화면 높이를 활용하도록 설정 */
-.home-section.full-page-content {
-    min-height: calc(100vh - 80px); /* 헤더 높이(약 80px)를 제외 */
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;           /* 안쪽 이미지도 동그라미 */
+  object-fit: cover;
+  display: block;
+}
+
+.about-right {
+  flex: 1;
+  background: #ffffff;         /* 아주 연한 박스 느낌 */
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 10px 25px rgba(148, 163, 209, 0.35);
+  border: 1px solid #eef0f6;
+}
+
+/* 블럭 공통 */
+.about-block {
+  margin-bottom: 1.8rem;
+}
+
+.about-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.about-kor {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 0.6rem;
+}
+
+.about-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.about-list {
+  list-style: none;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.about-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Skills & Tools 영역 */
+.tool-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.tool-group-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.tool-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tool-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  font-size: 0.8rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.tool-icon-shape {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #f3f4ff;
+  border: 1px solid #e5e7ff;
+  margin-bottom: 0.3rem;
+}
+
+.tool-icon img {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .about-inner {
+    flex-direction: column;
+    padding: 0 1.5rem;
+    row-gap: 2rem;
+  }
+
+  .about-left {
+    justify-content: center;
+  }
+
+  .about-right {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+/* ========================
+   Project page carousel
+   ======================== */
+
+.project-page {
+  background: transparent;
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.project-carousel {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* 좌우 화살표 버튼 */
+.project-arrow {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: #9ca3af;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.project-arrow:hover {
+  background: rgba(148, 163, 255, 0.15);
+  color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.project-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  overflow: visible;
+}
+
+/* 기본 카드 스타일 */
+.project-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0.5;
+}
+
+/* 가운데 메인 카드 */
+.project-card.center {
+  width: 60%;
+  max-width: 760px;
+  height: 600px;
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* 양 옆에 살짝 보이는 카드 */
+.project-card.left-side,
+.project-card.right-side {
+  width: 18%;
+  max-width: 260px;
+  height: 320px;
+  transform: scale(0.96);
+}
+
+/* 카드 안 이미지 영역 */
+.project-image {
+  flex: 0 0 60%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 텍스트 영역 */
+.project-info {
+  flex: 1;
+  padding: 18px 22px 20px;
+}
+
+.project-info h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.project-sub {
+  font-size: 0.85rem;
+  color: #4f46e5;
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* 중앙 카드에서만 설명 좀 더 보이도록 */
+.project-card:not(.center) .project-desc {
+  display: none;
+}
+
+/* 필요하면 버튼 쓸 때 */
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: #4f46e5;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* 반응형 대충 처리 */
+@media (max-width: 900px) {
+  .project-carousel {
+    gap: 10px;
+  }
+
+  .project-card.center {
+    width: 75%;
+    height: 380px;
+  }
+
+  .project-card.left-side,
+  .project-card.right-side {
+    display: none; /* 화면 좁으면 양옆 카드 숨김 */
+  }
 }

@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박채련 | Robotics Developer Portfolio - HOME</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Chaeryeon | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+<header>
+  <div class="nav">
+    <div class="nav-left">CR</div>
+    <nav class="nav-right">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Project</a>
+      <a href="board.html">board</a>
+    </nav>
+  </div>
+</header>
 
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">P. R. Portfolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT ME</a></li>
-                <li><a href="project.html">PROJECT</a></li>
-            </ul>
-        </nav>
-    </header>
+<main>
+  <section class="home-section">
 
-    <main id="home" class="section home-section full-page-content">
-        <h2 class="section-header">1. HOME</h2>
-        <div class="home-content-box">
-            <div class="profile-area">
-                <div class="profile-circle">사진</div>
-                <div class="intro-text">
-                    <h1>안녕하세요! 박채련입니다</h1>
-                    <p class="role-title">Robotics Developer</p>
-                    <p class="summary-text">진행했던 프로젝트 요약: 로봇 공학 분야에서 3년간의 경력을 바탕으로...</p>
-                    <div class="cta-buttons">
-                        <a href="project.html" class="cta-button primary">프로젝트 보러 가기</a>
-                        <a href="about.html" class="cta-button secondary">About Me</a>
-                    </div>
-                </div>
-            </div>
+    <div class="profile-wrap">
+      <div class="profile-circle">
+        <!-- 원하는 프로필 이미지 URL로 교체 가능 -->
+        <img src="images/profile.png" alt="profile" />
+      </div>
+
+      <div class="profile-text">
+        <h2>안녕하세요! <span class="name">박채련입니다 👋</span></h2>
+        <h3>Robotics · Computer Vision Developer</h3>
+
+        <ul class="info-list">
+          <li>⚙️ ROS2 기반 자율주행 / SLAM / Navigation2 구축</li>
+          <li>🤖 Patrol System 설계 & 웹 대시보드 연동</li>
+          <li>🧪 YOLOv8 기반 PPE 감지</li>
+        </ul>
+
+        <div class="home-buttons">
+          <a class="btn-primary" href="project.html">프로젝트 보러가기</a>
+          <a class="btn-secondary" href="about.html">About me</a>
         </div>
-    </main>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 박채련 Portfolio. All rights reserved.</p>
-    </footer>
+  </section>
+</main>
+
+<footer>
+  © 2025 Chaeryeon
+</footer>
+
 </body>
 </html>
