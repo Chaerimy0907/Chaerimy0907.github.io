@@ -281,25 +281,23 @@ footer {
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.6rem 1rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #e5e7f5;
+  gap: 0.8rem;
+  padding: 0.4rem 0;
+  background: transpaarent;
+  border: none;
+  box-shadow: none;
   font-size: 0.8rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 .contact-icon {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  background-color: rgba(111, 144, 184, 0.15);
-
+  background: transparent;
+  border-radius: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 18px 18px;
-
+  background-size: contain;
   flex-shrink: 0;
 }
 
@@ -308,7 +306,7 @@ footer {
 }
 
 .contact-icon.email {
-  background-image: url("../images/email.svg");
+  background-image: url("../images/mail.svg");
 }
 
 .contact-text {
@@ -317,9 +315,7 @@ footer {
 }
 
 .contact-item:hover {
-  transform: translateY(-1px);
-  background: #ffffff;
-  box-shadow: 0 8px 18px rgba(148, 163, 209, 0.35);
+  color: var(--blue-main);
 }
 
 .contact-item:active {
