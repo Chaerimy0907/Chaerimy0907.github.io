@@ -56,16 +56,17 @@ header {
   font-size: 0.95rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  color: var(--text-sub);
+  color: rgba(255, 255, 255, 0.75);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-right a:hover {
-  background: #f3f4ff;
-  color: var(--indigo-soft);
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
 .nav-right a.active {
-  background: var(--indigo);
+  background: rgba(255, 255, 255, 0.28);
   color: #ffffff;
 }
 
