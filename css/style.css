@@ -484,15 +484,16 @@ footer {
   display: none;
 }
 
-.side-card .title,
-.side-card .desc {
+.project-card:not(.center) .project-info {
+  padding: 12px 14px 14px;
+}
+
+.project-card:not(.center) h2,
+.project-card:not(.center) .project-sub {
+  font-size: 0.8rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.side-card .desc {
-  display: none;
 }
 
 /* 필요하면 버튼 쓸 때 */
