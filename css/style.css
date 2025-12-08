@@ -98,7 +98,7 @@ main {
   width: 400px;
   border-radius: 36px;
 
-  background: linear-gradient(135deg, #f6f9fd, #e7eff9);
+  background: var(--blue-soft);
   box-shadow: 0 24px 55px rgba(111, 144, 184, 0.28);
   border: 1px solid rgba(111, 144, 184, 0.35);
   padding: 32px 28px 28px;
@@ -118,7 +118,7 @@ main {
 .profile-card-name {
   font-size: 2.0rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff;
   margin-bottom: 8px;
   text-align: center;
 }
@@ -128,14 +128,15 @@ main {
   display: block;
   width: 100px;
   height: 3px;
+  margin-top: 8px;
   margin-bottom: 8px;
-  background: rgba(111, 144, 184, 0.45)
+  background: #ffffff
 }
 
 .profile-card-role {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #6b7280;
+  color: #edeeef;
   margin-bottom: 0px;
   text-align: center;
 }
