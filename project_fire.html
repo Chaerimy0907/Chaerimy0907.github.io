@@ -114,160 +114,188 @@
       </section>
 
       <!-- 개발 과정 (단계별) -->
+      <!-- 개발 과정 (단계별) -->
       <section class="project-detail-section">
         <h3>DEVELOPMENT PROCESS</h3>
         <p class="label-sub">단계별 진행 내용 · 역할 · 문제 해결</p>
+      </section>
 
-        <!-- 1단계 -->
-        <h4 style="margin-top:0.6rem;">1단계. 개발 환경 구축</h4>
-        <ul class="project-detail-list">
-          <li>
-            <strong>진행 내용</strong> :
-            Ubuntu 22.04 기반 개발 환경을 구성하고, Raspberry Pi(SBC)와 VMware Ubuntu를 병행 사용하며
-            ROS2 Humble 설치 및 기본 패키지 구성을 진행했다. SBC(로봇) ↔ 개발 PC 간 ROS2 토픽 통신이 가능한 네트워크 환경을 만드는 것이 목표였다.
-          </li>
-          <li>
-            <strong>담당 역할</strong> :
-            ROS2 설치 및 초기 설정, VMware 네트워크 브리지 구성, ROS_DOMAIN_ID 및 DDS 설정,
-            <code>ros2 topic list / echo</code>를 통한 통신 테스트 및 디버깅을 담당했다.
-          </li>
-          <li>
-            <strong>마주친 문제</strong> :
-            SSH와 ping은 정상인데, 간헐적으로 <code>ros2 topic list</code>가 아무 것도 보이지 않는 문제가 반복되었다.
-            재부팅 이후 특히 자주 발생해서 원인 파악이 필요했다.
-          </li>
-          <li>
-            <strong>문제 분석</strong> :
-            단순 네트워크 문제라기보다는 ROS2의 DDS 데몬이 정상적으로 동작하지 않는 상황으로 추정했다.
-            VMware 네트워크 브리지 상태가 바뀌거나 재부팅 이후 DDS 캐시가 꼬이면서 토픽 디스커버리가 실패하는 패턴이 관찰되었다.
-          </li>
-          <li>
-            <strong>해결 방안</strong> :
-            <code>ros2 daemon stop</code> / <code>ros2 daemon start</code>를 통해 DDS 데몬을 재시작하면
-            대부분의 케이스에서 통신이 복구되는 것을 확인했고, VMware 네트워크 모드를 Bridge로 고정했다.
-            이후 통신 장애가 발생하면 “네트워크 → DDS 데몬 → ROS 노드” 순서로 원인을 분리해 확인하는 체크리스트를 만들어 운영했다.
-          </li>
-        </ul>
-
-        <!-- 2단계 -->
-        <h4 style="margin-top:1.0rem;">2단계. Mapping (SLAM)</h4>
-
-        <div class="project-detail-image" 
-             style="background-image: url('images/mapping.gif');">
+      <!-- 1단계. 개발 환경 구축 -->
+      <section class="dev-step">
+        <h3 class="step-title">1단계. 개발 환경 구축</h3>
+        <div class="step-content">
+          <div class="step-media">
+            <!-- 필요하면 나중에 개발환경 다이어그램 / 캡처 넣기 -->
+            <!-- <img src="images/env_setup.webp" alt="개발 환경 구성" /> -->
+          </div>
+          <div class="step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                Ubuntu 22.04 기반 개발 환경을 구성하고, Raspberry Pi(SBC)와 VMware Ubuntu를 병행 사용하여
+                ROS2 Humble 설치 및 기본 패키지 구성을 진행했다. SBC(로봇) ↔ 개발 PC 간 ROS2 토픽 통신이
+                가능한 네트워크 환경을 만드는 것이 목표였다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                ROS2 설치 및 초기 설정, VMware 네트워크 브리지 구성, ROS_DOMAIN_ID 및 DDS 설정,
+                <code>ros2 topic list / echo</code>를 통한 통신 테스트 및 디버깅을 담당했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                SSH와 ping은 정상인데, 간헐적으로 <code>ros2 topic list</code>가 아무 것도 보이지 않는 문제가 반복되었다.
+                재부팅 이후 특히 자주 발생해서 원인 파악이 필요했다.
+              </li>
+              <li>
+                <strong>문제 분석</strong> :
+                단순 네트워크 문제라기보다는 ROS2의 DDS 데몬이 정상적으로 동작하지 않는 상황으로 추정했다.
+                VMware 네트워크 브리지 상태가 바뀌거나 재부팅 이후 DDS 캐시가 꼬이면서 토픽 디스커버리가 실패하는 패턴이 관찰되었다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                <code>ros2 daemon stop</code> / <code>ros2 daemon start</code>로 DDS 데몬을 재시작하면
+                대부분의 케이스에서 통신이 복구되는 것을 확인했고, VMware 네트워크 모드를 Bridge로 고정했다.
+                이후 통신 장애가 발생하면 “네트워크 → DDS 데몬 → ROS 노드” 순서로 원인을 분리해 확인하는 체크리스트를 만들어 운영했다.
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="project-detail-list">
-          <li>
-            <strong>진행 내용</strong> :
-            Cartographer를 사용해 실내 환경을 직접 주행하며 지도를 생성했습니다.
-            단순히 한 번에 맵을 완성하기보다는, 끊김 없이 반복 주행이 가능하나 수준의
-            품질을 목표로 여러 차례 맵을 다시 생성했습니다.
-          </li>
-          <li>
-            <strong>담당 역할</strong> :
-            Cartographer 파라미터 설정 및 실행, 센서 토픽 확인,
-            <code>/map</code>, <code>/scan</code> 상태 점검과
-            <code>map_saver_cli</code>를 이용한 맵 저장을 담당
-          </li>
-          <li>
-            <strong>마주친 문제</strong> :
-            주행 중 로봇이 미세하게 흔들리거나 회전할 때
-            벽이 두껍게 생성되거나 지도가 겹쳐 보이는 현상이 발생
-          </li>
-          <li>
-            <strong>문제 분석</strong> :
-            LiDAR 스캔 간 간격과 로봇 회전 속도에 비해 SLAM 업데이트가
-            과도하게 발생하면서 누적 오차가 커진 것으로 판단
-            특히 좁은 구간에서 회전 시 오차가 눈에 띄게 증가
-          </li>
-          <li>
-            <strong>해결 방안</strong> :
-            로봇 회전 속도를 낮추고, scan throttling 및 update 주기를 조정<br>
-            또한 1회 매핑으로 끝내지 않고, 여러번 매핑을 진행하여 완성도를 비교해
-            최종 맵을 선정하는 방식으로 안정성을 확보
-          </li>
-        </ul>
+      </section>
 
-        <!-- 3단계 -->
-        <h4 style="margin-top:1.0rem;">3단계. Navigation2</h4>
-
-        <div class="project-detail-image" 
-             style="background-image: url('images/navigation.GIF');">
+      <!-- 2단계. Mapping (SLAM) -->
+      <section class="dev-step">
+        <h3 class="step-title">2단계. Mapping (SLAM)</h3>
+        <div class="step-content">
+          <div class="step-media">
+            <img src="images/mapping.gif" alt="Mapping 과정" />
+          </div>
+          <div class="step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                Cartographer를 사용해 실내 환경을 직접 주행하며 지도를 생성했다.
+                단순히 한 번에 맵을 완성하기보다는, 반복 주행이 가능하고 신뢰할 수 있는 품질을 목표로
+                여러 차례 맵을 다시 생성했다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                Cartographer 파라미터 설정 및 실행, 센서 토픽 확인,
+                <code>/map</code>, <code>/scan</code> 상태 점검과
+                <code>map_saver_cli</code>를 이용한 맵 저장을 담당했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                주행 중 로봇이 미세하게 흔들리거나 회전할 때
+                벽이 두껍게 생성되거나 지도가 겹쳐 보이는 현상이 발생했다.
+              </li>
+              <li>
+                <strong>문제 분석</strong> :
+                LiDAR 스캔 간 간격과 로봇 회전 속도에 비해 SLAM 업데이트가 과도하게 발생하면서
+                누적 오차가 커진 것으로 판단했다. 특히 좁은 복도에서 회전 시 오차가 눈에 띄게 증가했다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                로봇 회전 속도를 낮추고, scan throttling 및 update 주기를 조정했다.
+                또한 1회 매핑으로 끝내지 않고, 여러 번 매핑을 진행하여 완성도를 비교한 뒤
+                최종 맵을 선정하는 방식으로 안정성을 확보했다.
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="project-detail-list">
-          <li>
-            <strong>진행 내용</strong> :
-            저장된 맵을 기반으로 Navigation2를 구성해,
-            목표 지점을 지정하면 로봇이 스스로 경로를 생성하고
-            장애물을 회피하며 이동하도록 설정했습니다.
-          </li>
-          <li>
-            <strong>담당 역할</strong> :
-            Navigation2 Bringup 구성, AMCL 기반 위치 추정 설정,
-            Global / Local Planner 및 Costmap 파라미터 튜닝을 담당
-          </li>
-          <li>
-            <strong>마주친 문제</strong> :
-            반복 주행 시 로봇 위치가 갑자기 튀거나,
-            목표 지점 근처에서 불필요하게 회전을 반복하는 현상 발생
-          </li>
-          <li>
-            <strong>문제 분석</strong> :
-            배터리 전압 저하로 인한 미세한 주행 오차가 누적되면서
-             AMCL 위치 추정 정확도가 떨어졌고,
-             costmap inflation 설정이 실제 공간 대비 과도해
-             경로 재계획이 잦아진 것으로 판단
-          </li>
-          <li>
-            <strong>해결 방안</strong> :
-            배터리 상태에 따라 주행을 제한하고,
-            inflation radius. 및 obstacle layer를 실제 환경에 맞게 축소<br>
-            또한 반복 주행 테스트를 통해 파라미터를 단계적으로 조정해
-            안정적인 목적지 도달을 확보
-          </li>
-        </ul>
+      </section>
 
-        <!-- 4단계 -->
-        <h4 style="margin-top:1.0rem;">4단계. Patrol System 구축</h4>
-        <ul class="project-detail-list">
-          <li>
-            <strong>진행 내용</strong> :
-            YAML 파일로 관리하는 웨이포인트 기반 순찰 시스템을 설계하고,
-            FollowWaypoints 액션을 이용해 정해진 순서대로 지점을 순찰하도록 구현했습니다.
-            순찰 시작 / 중단 / 재개 / 복귀 명령과 화재 감지 이벤트를 연결해
-            실제 운영 상황을 가정한 제어 구조를 만들었습니다.
-          </li>
-          <li>
-            <strong>담당 역할</strong> :
-            <code>PatrolManager</code> 노드를 설계·구현하고, Waypoints YAML 구조 정의,
-            순찰 상태 관리(State Machine) 설계, 화재 이벤트 및 배터리 조건을
-            순찰 로직과 연동하는 의사결정 로직을 담당
-          </li>
-          <li>
-            <strong>마주친 문제</strong> :
-            순찰 중 <code>pause → resume</code> 명령을 여러 번 반복하면,
-            현재 순찰 상태가 꼬이거나 1회 순찰 후 자동 복귀가 되지 않는 문제가 발생<br>
-            외부에서 들어오는 명령과 FollowWaypoints 액션의 상태가 서로 맞지 않는 경우가 자주 발생
-          </li>
-          <li>
-            <strong>문제 분석</strong> :
-            순찰을 “한 번의 동작”으로만 보고 구현해,
-            내부 상태(IDLE / RUNNING / PAUSED / RETURNING)가 명확하게 정의되지 않은 것이 핵심 원인<br>
-            액션 취소와 재요청 흐름도 정리되어 있지 않아, 외부 명령이 들어올 때마다 제어 흐름이 복잡해짐
-          </li>
-          <li>
-            <strong>해결 방안</strong> :
-            순찰을 <strong>상태 기반(State Machine)</strong>으로 다시 설계<br>
-            <code>IDLE / PATROLLING / PAUSED / RETURNING</code> 상태를 명시적으로 두고,
-            모든 외부 명령을 “상태 전이”로 해석하도록 구조를 변경<br>
-            화재 감지 이벤트는 순찰을 즉시 중단시키는 트리거로 사용하지 않고,
-            웹 대시보드에 경고 알림만 표시라도록 분리<br>
-            운영자가 '정지' 또는 '복귀' 명령을 선택했을 때에만 
-            FollowWaypoints 액션을 cancel하거나 복귀 이동을 수행하도록 제어 흐름을 단순화<br>
-            이를 통해 자동 동작과 사용자 제어를 명확히 분리했고,
-            반복적인 명령 입력이나 예외 상황에서도
-            순찰 상태가 꼬이지 않고 예측 가능한 동작을 유지할 수 있도록 개선
-          </li>
-        </ul>
+      <!-- 3단계. Navigation2 -->
+      <section class="dev-step">
+        <h3 class="step-title">3단계. Navigation2</h3>
+        <div class="step-content">
+          <div class="step-media">
+            <img src="images/navigation.GIF" alt="Navigation2 경로 주행" />
+          </div>
+          <div class="step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                저장된 맵을 기반으로 Navigation2를 구성해,
+                목표 지점을 지정하면 로봇이 스스로 경로를 생성하고
+                장애물을 회피하며 이동하도록 설정했다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                Navigation2 Bringup 구성, AMCL 기반 위치 추정 설정,
+                Global / Local Planner 및 Costmap 파라미터 튜닝을 담당했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                반복 주행 시 로봇 위치가 갑자기 튀거나,
+                목표 지점 근처에서 불필요하게 회전을 반복하는 현상이 발생했다.
+              </li>
+              <li>
+                <strong>문제 분석</strong> :
+                배터리 전압 저하로 인한 미세한 주행 오차가 누적되면서
+                AMCL 위치 추정 정확도가 떨어졌고,
+                costmap inflation 설정이 실제 공간 대비 과도해
+                경로 재계획이 잦아진 것으로 판단했다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                배터리 상태에 따라 주행을 제한하고,
+                inflation radius 및 obstacle layer를 실제 환경에 맞게 축소했다.
+                반복 주행 테스트를 통해 파라미터를 단계적으로 조정해
+                안정적인 목적지 도달을 확보했다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4단계. Patrol System -->
+      <section class="dev-step">
+        <h3 class="step-title">4단계. Patrol System 구축</h3>
+        <div class="step-content">
+          <div class="step-media">
+            <!-- 나중에 순찰 로직 gif 있으면 여기 넣기 -->
+            <!-- <img src="images/patrol.gif" alt="Patrol System" /> -->
+          </div>
+          <div class="step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                YAML 파일로 관리하는 웨이포인트 기반 순찰 시스템을 설계하고,
+                FollowWaypoints 액션을 이용해 정해진 순서대로 지점을 순찰하도록 구현했다.
+                순찰 시작 / 중단 / 재개 / 복귀 명령과 화재 감지 이벤트를 연결해
+                실제 운영 상황을 가정한 제어 구조를 만들었다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                <code>PatrolManager</code> 노드를 설계·구현하고, Waypoints YAML 구조 정의,
+                순찰 상태 관리(State Machine) 설계, 화재 이벤트 및 배터리 조건을
+                순찰 로직과 연동하는 의사결정 로직을 담당했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                순찰 중 <code>pause → resume</code> 명령을 여러 번 반복하면,
+                현재 순찰 상태가 꼬이거나 1회 순찰 후 자동 복귀가 되지 않는 문제가 발생했다.
+              </li>
+              <li>
+                <strong>문제 분석</strong> :
+                순찰을 “한 번의 동작”으로만 보고 구현해,
+                내부 상태(IDLE / RUNNING / PAUSED / RETURNING)가 명확하게 정의되지 않은 것이 핵심 원인이었다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                순찰을 <strong>상태 기반(State Machine)</strong>으로 다시 설계하고,
+                <code>IDLE / PATROLLING / PAUSED / RETURNING</code> 상태를 명시적으로 분리했다.<br>
+                화재 감지 이벤트 자체는 순찰을 자동으로 멈추는 트리거가 아니라
+                웹 대시보드에 경고를 띄우는 역할만 하도록 두고,<br>
+                운영자가 ‘정지’ 또는 ‘복귀’를 선택했을 때에만
+                FollowWaypoints 액션을 cancel하거나 복귀 이동을 수행하도록 제어 흐름을 단순화했다.<br>
+                이로써 자동 동작과 사용자 제어가 명확히 분리되고,
+                반복적인 명령 입력이나 예외 상황에서도
+                순찰 상태가 꼬이지 않고 예측 가능한 동작을 유지할 수 있게 했다.
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <!-- 성과 & 배운 점 -->
