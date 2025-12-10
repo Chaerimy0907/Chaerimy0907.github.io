@@ -964,6 +964,10 @@ main.project-page {
   margin-bottom: 1.4rem;
   padding-bottom: 0.9rem;
   border-bottom: 1px solid #e5e7eb;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 1.5rem, 0 0.9rem;
+  border-radius: 0;
 }
 
 .project-detail-title {
@@ -1130,6 +1134,7 @@ main.project-page {
   font-weight: 700;
   color: #111827;
   margin: 0 0 1.8rem;
+  margin-top: 0.5rem;
   padding-left: 2.4rem;
   position: relative;
 }
