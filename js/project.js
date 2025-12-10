@@ -151,9 +151,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".project-track");
   if (track) {
     track.addEventListener("click", (e) => {
+      if (e.target.closest(".project-quick-btn")) {
+        const card = e.target.closest(",project-card");
+        if (!card) return;
+
+        e.stopPropagation();
+        openModalFromCard(card);
+        return;
+      }
+
       const card = e.target.closest(".project-card");
       if (!card) return;
-      openModalFromCard(card);
+
+      const detail = card.dataset.detail;
+      if (detail) {
+        window.location.href = detail;
+      }
     });
   }
 });

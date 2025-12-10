@@ -689,6 +689,24 @@ main.project-page {
   text-decoration: underline;
 }
 
+.project-quick-btn {
+  align-self: flex-end;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--blue-main);
+  background: #ffffff;
+  color: var(--blue-main);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.project-quick-btn:hover {
+  background: var(--blue-main);
+  color: #ffffff;
+}
+
 /* 반응형 처리 */
 @media (max-width: 900px) {
   .project-carousel {
