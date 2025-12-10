@@ -1232,3 +1232,51 @@ main.project-page {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* =========================================
+   이미지 확대 모달
+========================================= */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 60;
+}
+
+.image-modal.hidden {
+  display: none;
+}
+
+.image-modal-content {
+  max-width: 1100px;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.7);
+  position: relative;
+}
+
+.image-modal-content img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.image-modal-close:hover {
+  color: #4b5563;
+}

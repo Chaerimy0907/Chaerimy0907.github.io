@@ -179,3 +179,45 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft")  prevProject();
   if (e.key === "Escape")     closeModal();
 });
+
+// =====================================
+// DEV 단계 이미지 클릭 → 확대 모달
+// =====================================
+document.addEventListener("DOMContentLoaded", function () {
+  const imgModal   = document.getElementById("imageModal");
+  const imgModalImg = document.getElementById("modalImage");
+  const imgCloseBtn = document.querySelector(".image-modal-close");
+
+  if (!imgModal || !imgModalImg || !imgCloseBtn) return; // 모달 없으면 종료
+
+  // dev-step 안의 이미지 블럭들
+  const medias = document.querySelectorAll(".dev-step-media");
+
+  medias.forEach((el) => {
+    el.style.cursor = "zoom-in";
+
+    el.addEventListener("click", () => {
+      // background-image: url("...") 문자열 읽기
+      const bg = window.getComputedStyle(el).backgroundImage;
+      if (!bg || bg === "none") return;
+
+      // url("...") 앞뒤 "" 제거
+      const imgUrl = bg.replace(/^url\(["']?/, "").replace(/["']?\)$/, "");
+
+      imgModalImg.src = imgUrl;
+      imgModal.classList.remove("hidden");
+    });
+  });
+
+  // X 버튼으로 닫기
+  imgCloseBtn.addEventListener("click", () => {
+    imgModal.classList.add("hidden");
+  });
+
+  // 어두운 배경 클릭해도 닫기
+  imgModal.addEventListener("click", (e) => {
+    if (e.target === imgModal) {
+      imgModal.classList.add("hidden");
+    }
+  });
+});
