@@ -689,7 +689,7 @@ main.project-page {
   text-decoration: underline;
 }
 
-/* 반응형 대충 처리 */
+/* 반응형 처리 */
 @media (max-width: 900px) {
   .project-carousel {
     gap: 10px;
@@ -863,6 +863,201 @@ main.project-page {
   }
 
   .project-modal-image {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* 상세 페이지 링크 버튼 */
+.modal-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.modal-link-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  padding: 0.5rem 1.0rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+  color: #ffffff;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.modal-link-detail:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* 프로젝트 상세 페이지 레이아웃 */
+.project-detail-page {
+  min-height: calc(100vh - 64px - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 0 3rem;
+  background: var(--blue-bg);
+}
+
+.project-detail-inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.8rem;
+}
+
+.project-detail-card {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 2.2rem 2.6rem;
+  box-shadow: 0 24px 56px rgba(148, 163, 209, 0.42);
+  border: 1px solid #e5e7f5;
+}
+
+.project-detail-header {
+  margin-bottom: 1.4rem;
+}
+
+.project-detail-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.project-detail-meta {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.project-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  column-gap: 2.2rem;
+  row-gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.project-detail-section {
+  margin-bottom: 1.4rem;
+}
+
+.project-detail-section h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+.project-detail-section .label-sub {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 0.35rem;
+}
+
+.project-detail-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.project-detail-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.project-detail-list li + li {
+  margin-top: 0.25rem;
+}
+
+.project-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag-pill {
+  font-size: 0.78rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #374151;
+}
+
+.project-detail-image {
+  width: 100%;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5ecf6;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 16px 40px rgba(148, 163, 209, 0.45);
+  margin-bottom: 1.2rem;
+}
+
+.project-detail-links {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--blue-main);
+  color: var(--blue-main);
+  background: #ffffff;
+}
+
+.project-detail-link.github::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/github.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.project-detail-link:hover {
+  background: var(--blue-main);
+  color: #ffffff;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .project-detail-page {
+    padding: 2.2rem 0 2.6rem;
+  }
+
+  .project-detail-inner {
+    padding: 0 1.4rem;
+  }
+
+  .project-detail-card {
+    padding: 1.7rem 1.6rem;
+  }
+
+  .project-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-image {
     aspect-ratio: 4 / 3;
   }
 }

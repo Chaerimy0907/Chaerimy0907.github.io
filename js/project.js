@@ -10,6 +10,7 @@ let modalDesc;
 let modalSkillsList;
 let modalGithub;
 let modalImage;
+let modalDetail;
 
 function updateCards() {
   const len = cards.length;
@@ -63,11 +64,12 @@ function openModalFromCard(card) {
 
   const dataset = card.dataset || {};
 
-  const title = dataset.title || card.querySelector("h2")?.textContent || "";
-  const team = dataset.team || "";
-  const desc = dataset.desc || "";
-  const skills = dataset.skills || "";
-  const github = dataset.github || "";
+  const title   = dataset.title || card.querySelector("h2")?.textContent || "";
+  const team    = dataset.team || "";
+  const desc    = dataset.desc || "";
+  const skills  = dataset.skills || "";
+  const github  = dataset.github || "";
+  const detail  = dataset.detail || "";
   const bgImage = card.querySelector(".project-image")?.style.backgroundImage || "";
 
   modalTitle.textContent = title;
@@ -93,6 +95,16 @@ function openModalFromCard(card) {
   } else {
     modalGithub.href = "#";
     modalGithub.style.display = "none";
+  }
+
+  if (modalDetail) {
+    if (detail) {
+      modalDetail.href = detail;
+      modalDetail.style.display = "inline-flex";
+    } else {
+      modalDetail.href = "#";
+      modalDetail.style.display = "none";
+    }
   }
 
   if(bgImage) {
@@ -121,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modalSkillsList = document.getElementById("modal-skills-list");
   modalGithub     = document.getElementById("modal-github");
   modalImage      = document.querySelector(".project-modal-image");
+  modalDetail     = document.getElementById("modal-detail");
 
   const closeBtn = document.querySelector(".project-modal-close");
   if (closeBtn) {
