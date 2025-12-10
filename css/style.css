@@ -937,9 +937,8 @@ main.project-page {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 3rem 0 3rem;
+  padding: 4rem 0 3rem;
   background: var(--blue-bg);
-  scroll-margin-top: 90px;
 }
 
 .project-detail-inner {
@@ -952,7 +951,7 @@ main.project-page {
 .project-detail-card {
   background: #ffffff;
   border-radius: 26px;
-  padding: 2.2rem 2.6rem;
+  padding: 2.4rem 2.6rem 2.6rem;
   box-shadow: 0 24px 56px rgba(148, 163, 209, 0.42);
   border: 1px solid #e5e7f5;
   animation: detailFadeUp 0.35s ease-out;
@@ -960,13 +959,14 @@ main.project-page {
 
 .project-detail-header {
   margin-bottom: 1.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .project-detail-title {
   font-size: 1.6rem;
   font-weight: 700;
   color: #111827;
-  scroll-margin-top: 90px;
 }
 
 .project-detail-meta {
@@ -1090,21 +1090,66 @@ main.project-page {
   }
 }
 
-.dev-step {
-  margin-top: 3rem;
-  padding-top: 2rem;
+.summary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+  column-gap: 2.4rem;
+  row-gap: 2rem;
+  margin-top: 1.6rem;
+}
+
+.project-detail-section {
+  margin-bottom: 1.6rem;
+}
+
+.project-detail-section + .project-detail-section {
+  margin-top: 1.4rem;
+}
+
+.timeline-section {
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed #e5e7eb;
+}
+
+@media (max-width: 900px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dev-heading {
+  margin-top: 2.6rem;
+  padding-top: 1.8rem;
   border-top: 2px solid #e5e7eb;
 }
 
-.dev-step:first-of-type {
-  margin-top: 2rem;
+.dev-heading h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.dev-heading .label-sub {
+  margin-top: 0.25rem;
+}
+
+.dev-step {
+  margin-top: 1.8rem;
+  padding-top: 1.6rem 1.8rem 1.6rem;
+  border-radius: 18px;
+  border: 1px solid #e5e7f5;
+  background: #f9fafb;
+}
+
+.dev-step:nth-of-type(even) {
+  background: #f3f4ff;
 }
 
 .step-title {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.0rem;
 }
 
 .step-content {
@@ -1132,6 +1177,12 @@ main.project-page {
 
 .step-text .project-detail-list li + li {
   margin-top: 0.35rem;
+}
+
+@media (max-width: 900px) {
+  .step-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 반응형 */
