@@ -566,6 +566,7 @@ main.project-page {
   border: 2px solid var(--blue-main);
   box-shadow: 0 25px 60px rgba(111, 144, 184, 0.35);
   background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+  position: relative;
 }
 
 /* 양 옆에 살짝 보이는 카드 */
@@ -581,6 +582,24 @@ main.project-page {
 
 .project-card.hidden {
   display: none;
+}
+
+.project-card.center::after {
+  content: "Click to view details →";
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+
+.project-card.center::hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* 카드 안 이미지 영역 */
@@ -935,6 +954,7 @@ main.project-page {
   padding: 2.2rem 2.6rem;
   box-shadow: 0 24px 56px rgba(148, 163, 209, 0.42);
   border: 1px solid #e5e7f5;
+  animation: detailFadeUp 0.35s ease-out;
 }
 
 .project-detail-header {
@@ -1055,6 +1075,17 @@ main.project-page {
 .project-detail-link:hover {
   background: var(--blue-main);
   color: #ffffff;
+}
+
+@keyframes detailFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 반응형 */

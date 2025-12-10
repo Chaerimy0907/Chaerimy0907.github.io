@@ -151,8 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".project-track");
   if (track) {
     track.addEventListener("click", (e) => {
-      if (e.target.closest(".project-quick-btn")) {
-        const card = e.target.closest(",project-card");
+
+      const quickBtn = e.target.closest(".project-quick-btn");
+      if (quickBtn) {
+        const card = quickBtn.closest(".project-card");
         if (!card) return;
 
         e.stopPropagation();
