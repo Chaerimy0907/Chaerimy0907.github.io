@@ -1282,3 +1282,52 @@ main.project-page {
 .image-modal-close:hover {
   color: #4b5563;
 }
+
+/* =============================
+   모달 등장 애니메이션
+============================= */
+.project-modal,
+.image-modal {
+  animation: modalFadeBg 0.25s ease-out;
+}
+
+.project-modal-content,
+.image-modal-content {
+  animation: modalPopUp 0.25s ease-out;
+}
+
+@keyframes modalFadeBg {
+  from {
+    background: rgba(15, 23, 42, 0);
+  }
+  to {
+    background: rgba(15, 23, 42, 0.55);
+  }
+}
+
+@keyframes modalPopUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =============================
+   페이지 전환 페이드
+============================= */
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.page-fade-in {
+  opacity: 1;
+}
+
+body.page-fade-out {
+  opacity: 0;
+}
