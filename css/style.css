@@ -1,13 +1,18 @@
-/* ============= 기본 색상 ============= */
+/* ========================================= 
+   공통변수
+========================================= */
 :root {
   --blue-main: #6f90b8;
   --blue-soft: #7f9fc4;
   --blue-bg: #eef3f9;
   --text-main: #1f2937;
   --text-sub: #6b7280;
+  --indigo-soft: #818cf8;
 }
 
-/* ============= 리셋 ============= */
+/* ========================================= 
+   Reset & 기본 스타일
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -20,13 +25,14 @@ body {
   color: var(--text-main);
 }
 
-/* ============= 링크 ============= */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ============= 헤더 ============= */
+/* ========================================= 
+   헤더 & 네비게이션
+========================================= */
 header {
   width: 100%;
   background: var(--blue-main);
@@ -71,7 +77,9 @@ header {
   color: #ffffff;
 }
 
-/* ============= 메인 섹션 ============= */
+/* ========================================= 
+   메인 레이아웃 & 푸터
+========================================= */
 main {
   min-height: calc(100vh - 64px - 70px);
   display: flex;
@@ -79,6 +87,16 @@ main {
   align-items: center;
 }
 
+footer {
+  text-align: center;
+  padding: 1.5rem 0 2rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ========================================= 
+   HOME 페이지
+========================================= */
 .home-section {
   width: 100%;
 }
@@ -92,7 +110,7 @@ main {
   gap: 3rem;
 }
 
-/* ============= 프로필 동그라미 ============= */
+/* 프로필 이미지 원형 */
 .profile-circle {
   width: 400px;
   height: 400px;
@@ -112,13 +130,13 @@ main {
   object-fit: cover;
 }
 
-/* ============= 오른쪽 텍스트 ============= */
+/* 오른쪽 텍스트 블럭 */
 .profile-text {
   width: 450px;
 }
 
 .profile-text h2 {
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.2rem;
 }
@@ -136,7 +154,7 @@ main {
 
 .info-list {
   list-style: none;
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: var(--text-sub);
   margin-bottom: 1.5rem;
 }
@@ -145,7 +163,7 @@ main {
   margin-bottom: 0.3rem;
 }
 
-/* ============= 버튼 ============= */
+/* 버튼 */
 .home-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -180,15 +198,7 @@ main {
   background: #f4f7fb;
 }
 
-/* ============= 푸터 ============= */
-footer {
-  text-align: center;
-  padding: 1.5rem 0 2rem;
-  font-size: 0.85rem;
-  color: #9ca3af;
-}
-
-/* ============= 반응형 ============= */
+/* HOME 반응형 */
 @media (max-width: 900px) {
   main {
     align-items: flex-start;
@@ -210,39 +220,37 @@ footer {
   }
 }
 
-/* ================== ABOUT PAGE ================== */
-
+/* =========================================
+   ABOUT 페이지
+========================================= */
 .about-page {
   width: 100%;
   background: transparent;
   min-height: calc(100vh - 64px - 70px);
-
   display: flex;
   justify-content: center;
-  align-items: center;           /* 위에서부터 시작 */
+  align-items: center;
   padding: 3rem 0 3rem;
 }
 
 .about-inner {
-  max-width: 1200px;                 /* 가로 더 넓게 */
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
 }
 
-/* ── 상단: 사진 + 연락처 (카드 밖) ───────────────── */
-
+/*  상단: 사진 + 연락처 */
 .about-top {
   width: 100%;
   display: flex;
   align-items: center;
-  column-gap: 2.4rem;
   justify-content: center;
+  column-gap: 2.4rem;
   margin-bottom: 3.2rem;
 }
 
@@ -253,7 +261,7 @@ footer {
 }
 
 .about-photo {
-  width: 220px;                       /* 좀 더 크게 */
+  width: 220px;
   height: 220px;
   border-radius: 50%;
   padding: 8px;
@@ -272,7 +280,7 @@ footer {
   display: block;
 }
 
-/* 연락처 카드들 */
+/* 연락처 블럭 */
 .about-contact {
   flex: 0 0 420px;
   display: flex;
@@ -336,8 +344,7 @@ footer {
   word-break: break-all;
 }
 
-/* ── 하단 큰 카드: 왼쪽 정보 / 오른쪽 Tools ────── */
-
+/* 하단 카드: 왼쪽 정보 / 오른쪽 Tools */
 .about-card {
   width: 100%;
   background: #ffffff;
@@ -354,12 +361,11 @@ footer {
   align-items: flex-start;
 }
 
-/* 왼쪽 텍스트 정보 */
+/* 왼쪽 정보 영역 */
 .about-info {
   font-size: 0.9rem;
 }
 
-/* 공통 블럭 */
 .about-block {
   margin-bottom: 1rem;
 }
@@ -405,12 +411,11 @@ footer {
   margin-right: 6px;
 }
 
-/* 오른쪽 Tools */
+/* 오른쪽: Skill / Tool 리스트 */
 .about-tools {
   font-size: 0.88rem;
 }
 
-/* Skills & Tools 영역 */
 .tool-groups {
   display: flex;
   flex-direction: column;
@@ -430,7 +435,6 @@ footer {
   gap: 0.55rem;
 }
 
-/* 툴 아이콘 – 배경 없이 깔끔하게 */
 .tool-icon {
   display: flex;
   flex-direction: column;
@@ -456,7 +460,7 @@ footer {
   display: none;
 }
 
-/* 반응형 */
+/* ABOUT 반응형 */
 @media (max-width: 900px) {
   .about-page {
     min-height: auto;
@@ -490,20 +494,16 @@ footer {
   }
 }
 
-/* ========================
-   Project page carousel
-   ======================== */
-
+/* =========================================
+   PROJECT 목록 페이지 (carousel)
+========================================= */
 main.project-page {
   background: transparent;
-
   min-height: calc(100vh - 64px - 70px);
   display: flex;
   justify-content: center;
   align-items: center;
-  
   padding: 3rem 0 3rem;
-  
   margin-top: 0;
 }
 
@@ -534,6 +534,7 @@ main.project-page {
   transform: translateY(-1px);
 }
 
+/* 카드 트랙 */
 .project-track {
   flex: 1;
   display: flex;
@@ -557,7 +558,7 @@ main.project-page {
   position: relative;
 }
 
-/* 가운데 메인 카드 */
+/* 중앙 메인 카드 */
 .project-card.center {
   width: 60%;
   max-width: 760px;
@@ -569,7 +570,7 @@ main.project-page {
   background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
 }
 
-/* 양 옆에 살짝 보이는 카드 */
+/* 양 옆 보조 카드 */
 .project-card.left-side,
 .project-card.right-side {
   width: 18%;
@@ -584,6 +585,7 @@ main.project-page {
   display: none;
 }
 
+/* 카드 hover 안내 텍스트 */
 .project-card::after {
   content: "Click to view details →";
   position: absolute;
@@ -602,7 +604,7 @@ main.project-page {
   transform: translateY(0);
 }
 
-/* 카드 안 이미지 영역 */
+/* 카드 내 이미지 */
 .project-image {
   flex: 0 0 60%;
   background-size: cover;
@@ -610,7 +612,7 @@ main.project-page {
   background-color: #e9eef6;;
 }
 
-/* 텍스트 영역 */
+/* 카드 내 텍스트 */
 .project-info {
   flex: 1;
   padding: 18px 22px 20px;
@@ -635,7 +637,7 @@ main.project-page {
   color: var(--text-sub);
 }
 
-/* 중앙 카드에서만 설명 좀 더 보이도록 */
+/* 메인 카드 외에는 설명 축약 */
 .project-card:not(.center) .project-desc {
   display: none;
 }
@@ -652,7 +654,7 @@ main.project-page {
   text-overflow: ellipsis;
 }
 
-/* 필요하면 버튼 쓸 때 */
+/* 카드 내 버튼 / 메타 */
 .project-btn {
   display: inline-block;
   margin-top: 12px;
@@ -708,6 +710,7 @@ main.project-page {
   text-decoration: underline;
 }
 
+/* Quick View 버튼 */
 .project-quick-btn {
   align-self: flex-end;
   margin-bottom: 6px;
@@ -726,7 +729,7 @@ main.project-page {
   color: #ffffff;
 }
 
-/* 반응형 처리 */
+/* PROJECT 목록 반응형 */
 @media (max-width: 900px) {
   .project-carousel {
     gap: 10px;
@@ -739,14 +742,13 @@ main.project-page {
 
   .project-card.left-side,
   .project-card.right-side {
-    display: none; /* 화면 좁으면 양옆 카드 숨김 */
+    display: none;
   }
 }
 
-/* ========================
-   Project detail modal
-   ======================== */
-
+/* =========================================
+   PROJECT 모달
+========================================= */
 .project-modal {
   position: fixed;
   inset: 0;
@@ -767,15 +769,14 @@ main.project-page {
   background: #ffffff;
   border-radius: 24px;
   box-shadow: 0 40px 90px rgba(15, 23, 42, 0.5);
-  padding: 2.0rem 2.4rem 2.2rem;
+  padding: 2rem 2.4rem 2.2rem;
   position: relative;
-
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
 }
 
-/* 닫기 버튼 */
+/* 모달 닫기 버튼 */
 .project-modal-close {
   position: absolute;
   top: 14px;
@@ -792,7 +793,7 @@ main.project-page {
   color: #4b5563;
 }
 
-/* 상단 이미지 */
+/* 모달 상단 이미지 */
 .project-modal-image {
   width: 100%;
   border-radius: 20px;
@@ -803,6 +804,7 @@ main.project-page {
   box-shadow: 0 16px 40px rgba(148, 163, 209, 0.5);
 }
 
+/* 모달 텍스트 */
 .project-modal-header {
   text-align: left;
 }
@@ -859,12 +861,13 @@ main.project-page {
   margin-top: 0.4rem;
 }
 
+/* 모달 내 GitHub / 상세 버튼 */
 .modal-link-github {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   font-size: 0.88rem;
-  padding: 0.5rem 1.0rem;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--blue-main);
   color: var(--blue-main);
@@ -889,6 +892,32 @@ main.project-page {
   border-color: var(--blue-main);
 }
 
+.modal-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.modal-link-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+  color: #ffffff;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.modal-link-detail:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
 /* 모달 반응형 */
 @media (max-width: 900px) {
   .project-modal-content {
@@ -904,34 +933,9 @@ main.project-page {
   }
 }
 
-/* 상세 페이지 링크 버튼 */
-.modal-links-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.4rem;
-}
-
-.modal-link-detail {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.88rem;
-  padding: 0.5rem 1.0rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
-  color: #ffffff;
-  cursor: pointer;
-  transition: filter 0.15s ease, transform 0.1s ease;
-}
-
-.modal-link-detail:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-}
-
-/* 프로젝트 상세 페이지 레이아웃 */
+/* =========================================
+   PROJECT 상세 페이지 공통
+========================================= */
 .project-detail-page {
   min-height: calc(100vh - 64px - 70px);
   display: flex;
@@ -955,8 +959,10 @@ main.project-page {
   box-shadow: 0 24px 56px rgba(148, 163, 209, 0.42);
   border: 1px solid #e5e7f5;
   animation: detailFadeUp 0.35s ease-out;
+  margin-top: 1.6rem;
 }
 
+/* 상단 타이틀 영역 */
 .project-detail-header {
   margin-bottom: 1.4rem;
   padding-bottom: 0.9rem;
@@ -975,22 +981,19 @@ main.project-page {
   color: #6b7280;
 }
 
-.project-detail-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  column-gap: 2.2rem;
-  row-gap: 1.6rem;
-  margin-top: 1.6rem;
+/* 텍스트 공통 */
+.project-detail-section {
+  margin-bottom: 1.6rem;
 }
 
-.project-detail-section {
-  margin-bottom: 1.4rem;
+.project-detail-section + .project-detail-section {
+  margin-top: 1.4rem;
 }
 
 .project-detail-section h3 {
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.06rem;
   color: #111827;
   margin-bottom: 0.3rem;
 }
@@ -1018,6 +1021,7 @@ main.project-page {
   margin-top: 0.25rem;
 }
 
+/* 태그 / 링크 */
 .project-detail-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1031,17 +1035,6 @@ main.project-page {
   border-radius: 999px;
   background: #eef2ff;
   color: #374151;
-}
-
-.project-detail-image {
-  width: 100%;
-  border-radius: 18px;
-  background-size: cover;
-  background-position: center;
-  background-color: #e5ecf6;
-  aspect-ratio: 16 / 9;
-  box-shadow: 0 16px 40px rgba(148, 163, 209, 0.45);
-  margin-bottom: 1.2rem;
 }
 
 .project-detail-links {
@@ -1079,17 +1072,19 @@ main.project-page {
   color: #ffffff;
 }
 
-@keyframes detailFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* 대표 이미지 */
+.project-detail-image {
+  width: 100%;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5ecf6;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 16px 40px rgba(148, 163, 209, 0.45);
+  margin-bottom: 1.2rem;
 }
 
+/* 요약 그리드 (Overview / Role 정리) */
 .summary-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
@@ -1098,26 +1093,14 @@ main.project-page {
   margin-top: 1.6rem;
 }
 
-.project-detail-section {
-  margin-bottom: 1.6rem;
-}
-
-.project-detail-section + .project-detail-section {
-  margin-top: 1.4rem;
-}
-
+/* 타임라인 구분선 */
 .timeline-section {
   margin-top: 2.4rem;
   padding-top: 1.6rem;
   border-top: 1px dashed #e5e7eb;
 }
 
-@media (max-width: 900px) {
-  .summary-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* 개발 과정 섹션 제목 */
 .dev-heading {
   margin-top: 2.6rem;
   padding-top: 1.8rem;
@@ -1133,6 +1116,9 @@ main.project-page {
   margin-top: 0.25rem;
 }
 
+/* =========================================
+   PROJECT 상세 – 단계별 DEV 블럭
+========================================= */
 .dev-step {
   margin-top: 1.8rem;
   padding-top: 1.6rem 1.8rem 2.1rem;
@@ -1141,11 +1127,12 @@ main.project-page {
   background: #f9fafb;
 }
 
+/* 단계 제목 (1단계/2단계...) */
 .dev-step-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: #111827;
-  margin: 3rem 0 1.8rem;
+  margin: 0 0 1.8rem;
   padding-left: 2.4rem;
   position: relative;
 }
@@ -1162,18 +1149,20 @@ main.project-page {
   border-radius: 999px;
 }
 
+/* 단계 카드 (이미지 + 내용) */
 .dev-step-block {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  padding: 1.8rem 2.0rem 2.0rem;
+  padding: 1.8rem 2rem 2rem;
   border-radius: 20px;
   background: #f9fbff;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
-  column-gap: 2.0rem;
+  column-gap: 2rem;
   row-gap: 1.2rem;
 }
 
+/* 단계 이미지 영역 */
 .dev-step-media {
   border-radius: 16px;
   background-size: cover;
@@ -1181,67 +1170,44 @@ main.project-page {
   background-color: #e5ecf6;
 }
 
+/* 단계 텍스트 */
 .dev-step-text .project-detail-list {
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .dev-step-block {
-    grid-template-columns: 1fr;
-  }
-}
-
-.step-content {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.step-media img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.25);
-}
-
-.step-text {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: #4b5563;
-}
-
-.step-text.project-detail-list {
-  margin-top: 0;
-  margin-bottom: 0.2rem;
-}
-
-.step-text .project-detail-list li + li {
-  margin-top: 0.35rem;
-}
-
-.project-detail-card,
-.project-detail-header,
-.project-detail-title {
-  position: static;
-}
-
-.project-detail-card {
-  margin-top: 1.6rem;
-}
-
+/* Outcome 구분선 */
 .outcome-section {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid #e5e7f5;
 }
 
+/* DEV 블럭 반응형 */
 @media (max-width: 900px) {
-  .step-content {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-step-block {
     grid-template-columns: 1fr;
   }
 }
 
-/* 반응형 */
+/* =========================================
+   공통 애니메이션 / 전체 반응형
+========================================= */
+@keyframes detailFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PROJECT 상세 반응형 전체 */
 @media (max-width: 900px) {
   .project-detail-page {
     padding: 2.2rem 0 2.6rem;
