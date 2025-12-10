@@ -1141,23 +1141,19 @@ main.project-page {
   background: #f9fafb;
 }
 
-.dev-step:nth-of-type(even) {
-  background: #f3f4ff;
-}
-
 .dev-step-title {
   font-size: 1.15rem;
   font-weight: 700;
   color: #111827;
   margin: 2.4rem 0 2.0rem;
-  padding-left: 0.9rem;
+  padding-left: 1.6rem;
   position: relative;
 }
 
 .dev-step-title::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 0.7;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
@@ -1169,12 +1165,12 @@ main.project-page {
 .dev-step-block {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  padding: 1.6rem 1.8rem 1.8rem;
+  padding: 1.8rem 2.0rem 2.0rem;
   border-radius: 20px;
   background: #f9fbff;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.6fr);
-  column-gap: 1.8rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  column-gap: 2.0rem;
   row-gap: 1.2rem;
 }
 
@@ -1231,6 +1227,12 @@ main.project-page {
 
 .project-detail-card {
   margin-top: 1.6rem;
+}
+
+.outcome-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7f5;
 }
 
 @media (max-width: 900px) {
