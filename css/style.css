@@ -1185,7 +1185,7 @@ main.project-page {
   margin: 0;
 }
 
-@medai (max-width: 900px) {
+@media (max-width: 900px) {
   .dev-step-block {
     grid-template-columns: 1fr;
   }
