@@ -1153,7 +1153,7 @@ main.project-page {
 .dev-step-title::before {
   content: "";
   position: absolute;
-  left: 0.3;
+  left: 0.3rem;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
