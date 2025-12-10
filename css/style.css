@@ -84,6 +84,7 @@ main {
   min-height: calc(100vh - 64px - 70px);
   display: block;
   padding: 2rem 0;
+}
 
 footer {
   text-align: center;
