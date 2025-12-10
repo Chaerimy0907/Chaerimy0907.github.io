@@ -1155,21 +1155,22 @@ main.project-page {
 .dev-step-block {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  padding: 1.8rem 2rem 2rem;
+  padding: 1.4rem 1.6rem !important;
   border-radius: 20px;
   background: #f9fbff;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  grid-template-columns: 1.5fr 1fr;
   column-gap: 2rem;
   row-gap: 1.2rem;
 }
 
 /* 단계 이미지 영역 */
 .dev-step-media {
-  border-radius: 16px;
-  background-size: cover;
+  height: 300px !important;
+  background-size: contain !important;
+  background-repeat: no-repeat;
   background-position: center;
-  background-color: #e5ecf6;
+  background-color: #ffffff;
 }
 
 /* 단계 텍스트 */
