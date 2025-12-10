@@ -82,10 +82,8 @@ header {
 ========================================= */
 main {
   min-height: calc(100vh - 64px - 70px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  display: block;
+  padding: 2rem 0;
 
 footer {
   text-align: center;
@@ -1120,8 +1118,8 @@ main.project-page {
    PROJECT 상세 – 단계별 DEV 블럭
 ========================================= */
 .dev-step {
-  margin-top: 1.8rem;
-  padding-top: 1.6rem 1.8rem 2.1rem;
+  margin-top: 2.6rem;
+  padding: 1.6rem 1.8rem 2.1rem;
   border-radius: 18px;
   border: 1px solid #e5e7f5;
   background: #f9fafb;
