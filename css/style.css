@@ -1145,15 +1145,15 @@ main.project-page {
   font-size: 1.15rem;
   font-weight: 700;
   color: #111827;
-  margin: 2.4rem 0 2.0rem;
-  padding-left: 1.6rem;
+  margin: 3rem 0 1.8rem;
+  padding-left: 2.4rem;
   position: relative;
 }
 
 .dev-step-title::before {
   content: "";
   position: absolute;
-  left: 0.5rem;
+  left: 1.4rem;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
