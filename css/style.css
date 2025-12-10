@@ -554,6 +554,7 @@ main.project-page {
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
   opacity: 0.45;
   border: 1px solid #e5eaf2;
+  position: relative;
 }
 
 /* 가운데 메인 카드 */
@@ -566,7 +567,6 @@ main.project-page {
   border: 2px solid var(--blue-main);
   box-shadow: 0 25px 60px rgba(111, 144, 184, 0.35);
   background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
-  position: relative;
 }
 
 /* 양 옆에 살짝 보이는 카드 */
@@ -584,7 +584,7 @@ main.project-page {
   display: none;
 }
 
-.project-card.center::after {
+.project-card::after {
   content: "Click to view details →";
   position: absolute;
   bottom: 14px;
@@ -597,7 +597,7 @@ main.project-page {
   pointer-events: none;
 }
 
-.project-card.center::hover::after {
+.project-card.about-inner::after {
   opacity: 1;
   transform: translateY(0);
 }
