@@ -1315,19 +1315,3 @@ main.project-page {
     transform: translateY(0) scale(1);
   }
 }
-
-/* =============================
-   페이지 전환 페이드
-============================= */
-body {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-body.page-fade-in {
-  opacity: 1;
-}
-
-body.page-fade-out {
-  opacity: 0;
-}
