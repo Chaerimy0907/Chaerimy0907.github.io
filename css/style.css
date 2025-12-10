@@ -1149,21 +1149,50 @@ main.project-page {
   font-size: 1.15rem;
   font-weight: 700;
   color: #111827;
-  margin: 2.4rem 0 1.2rem;
-  padding-left: 0.2rem;
+  margin: 2.4rem 0 2.0rem;
+  padding-left: 0.9rem;
   position: relative;
 }
 
 .dev-step-title::before {
   content: "";
   position: absolute;
-  left: -0.8rem;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
-  height: 60%;
+  height: 70%;
   background: var(--blue-main);
   border-radius: 999px;
+}
+
+.dev-step-block {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  padding: 1.6rem 1.8rem 1.8rem;
+  border-radius: 20px;
+  background: #f9fbff;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.6fr);
+  column-gap: 1.8rem;
+  row-gap: 1.2rem;
+}
+
+.dev-step-media {
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e5ecf6;
+}
+
+.dev-step-text .project-detail-list {
+  margin: 0;
+}
+
+@medai (max-width: 900px) {
+  .dev-step-block {
+    grid-template-columns: 1fr;
+  }
 }
 
 .step-content {
@@ -1192,6 +1221,16 @@ main.project-page {
 
 .step-text .project-detail-list li + li {
   margin-top: 0.35rem;
+}
+
+.project-detail-card,
+.project-detail-header,
+.project-detail-title {
+  position: static;
+}
+
+.project-detail-card {
+  margin-top: 1.6rem;
 }
 
 @media (max-width: 900px) {
