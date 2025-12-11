@@ -21,7 +21,7 @@
 
 body {
   /*font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;*/
-  background: var(#ffffff);
+  background: #ffffff;
   color: var(--text-main);
 }
 
@@ -218,6 +218,68 @@ footer {
   }
 }
 
+/* ===== HOME 중앙 Hero ===== */
+.home-hero {
+  text-align: center;
+  padding: 140px 20px 120px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.6rem;
+}
+
+.home-hero h1 .name {
+  color: var(--indigo-soft);
+}
+
+.home-hero h3 {
+  font-size: 1.1rem;
+  color: var(--text-sub);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+}
+
+.hero-tags {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.4rem;
+  font-size: 0.98rem;
+  color: #6f8ff8;
+  line-height: 1.9;
+}
+
+.hero-tags li::before {
+  content: "• ";
+  margin-right: 0.2rem;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+/* 모바일에서 여백 조정 */
+@media (max-width: 900px) {
+  .home-hero {
+    padding: 90px 16px 80px;
+  }
+
+  .home-hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .home-hero h3 {
+    font-size: 1rem;
+  }
+}
+
+
 /* =========================================
    ABOUT 페이지
 ========================================= */
@@ -291,7 +353,7 @@ footer {
   align-items: center;
   gap: 0.8rem;
   padding: 0.4rem 0;
-  background: transpaarent;
+  background: transparent;
   border: none;
   box-shadow: none;
   font-size: 0.8rem;
