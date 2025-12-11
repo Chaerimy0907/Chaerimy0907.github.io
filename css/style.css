@@ -102,7 +102,7 @@ footer {
 /* 중앙 큰 카드형 Hero 섹션 */
 .home-hero {
   max-width: 1040px;
-  margin: 4.5rem auto 3.5rem;
+  margin: 4rem auto;
   padding: 4rem 4.5rem;
   border-radius: 32px;
   background: radial-gradient(circle at top left,
@@ -180,7 +180,7 @@ footer {
 /* HOME 반응형 */
 @media (max-width: 900px) {
   .home-hero {
-    margin: 3rem 1rem 2.5rem;
+    margin: 3rem 1rem;
     padding: 2.8rem 1.8rem;
   }
 
@@ -226,6 +226,9 @@ footer {
   font-size: 0.98rem;
   color: #6f8ff8;
   line-height: 1.9;
+  max-width: 430px;
+  margin: 0 auto 2.4rem;
+  text-align: left;
 }
 
 .hero-tags li::before {
