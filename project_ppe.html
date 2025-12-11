@@ -132,7 +132,7 @@
                 공개된 사전 학습 YOLOv8 모델을 선택해 적용했다.
               </li>
               <li>
-                <strong>담당 역할</strong> :
+                <strong>핵심 구현</strong> :
                 모델 경로, 신뢰도 임계값(<code>CONF_THRESHOLD</code>) 등 핵심 파라미터를 설정하고,
                 테스트 영상 <code>Person / HardHat / Safety Vest</code> 클래스가 안정적으로 감지되는 검증했다.
               </li>
@@ -169,7 +169,7 @@
                 해당 인원이 PPE를 착용한 것으로 판단하는 로직을 구현했다.
               </li>
               <li>
-                <strong>담당 역할</strong> :
+                <strong>핵심 구현</strong> :
                 <code>get_box_center()</code>, <code>center_inside()</code>와 같은
                 유틸리티 함수를 설계해 코드를 모듈화하고,
                 인당 <code>has_hat</code>, <code>has_vest</code>를 체크해
@@ -206,7 +206,7 @@
                 리스트에 누적 저장했다가 일정 시간마다 평균값을 구해 CSV 파일로 저장하는 구조를 설계했다.
               </li>
               <li>
-                <strong>담당 역할</strong> :
+                <strong>핵심 구현</strong> :
                 <code>total_history</code>, <code>perfect_history</code>를 활용해
                 구간 평균 인원 수와 평균 착용률을 계산하고,
                 <code>ppe_log.csv</code>에 타임스탬프와 함께 저장하는
@@ -245,7 +245,7 @@
                 현장 관리자가 한눈에 상황을 파악할 수 있도록 했다.
               </li>
               <li>
-                <strong>담당 역할</strong> :
+                <strong>핵심 구현</strong> :
                 텍스트 위치(<code>TEXT_POS</code>)와 색상(<code>LABEL_COLORS</code>)을
                 설정값으로 분리해 <code>Config</code> 클래스로 관리하고,
                 <code>draw_text()</code>, <code>draw_box()</code> 함수를 통해 HUD 렌더링 로직을 모듈화했다.
