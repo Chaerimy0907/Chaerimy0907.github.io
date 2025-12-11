@@ -48,7 +48,7 @@
               학습 자체를 목표로 하기보다는, 이미 공개된 <strong>사전 학습 YOLOv8 모델</strong>을 활용해
               <code>Person / Hardhat / Safety Vest</code> 클래스를 감지하고,
               그 출력을 기반으로 <strong>착용 여부 판별·시각화·통계 집계</strong>까지 이어지는
-              하나의 파이프라인을 설계·구현하는 데 추점을 두었다.<br><br>
+              하나의 파이프라인을 설계·구현하는 데 초점을 두었다.<br><br>
               각 프레임마다 <strong>총 인원 수, 완전 착용 인원 수, 착용률(%)</strong>을 HUD 형식으로 표시하고,
               일정 주기마다 평균 착용률을 CSV로 기록해 시간대별 PPE 준수율을 확인할 수 있도록 구성했다.
             </p>
@@ -134,7 +134,7 @@
               <li>
                 <strong>핵심 구현</strong> :
                 모델 경로, 신뢰도 임계값(<code>CONF_THRESHOLD</code>) 등 핵심 파라미터를 설정하고,
-                테스트 영상 <code>Person / HardHat / Safety Vest</code> 클래스가 안정적으로 감지되는 검증했다.
+                테스트 영상 <code>Person / HardHat / Safety Vest</code> 클래스가 안정적으로 감지되는지 검증했다.
               </li>
               <li>
                 <strong>마주친 문제</strong> :
@@ -289,7 +289,7 @@
         </p>
 
         <div class="project-detail-links">
-          <a href="https://github.com/smartcore102/Yeonhee_smartcore.git"
+          <a href="https://github.com/Chaerimy0907/ppe_detection.git"
              target="_blank"
              class="project-detail-link github">
             GitHub Repository
@@ -308,7 +308,6 @@
   <p>© 2025 Chaeryeon</p>
 </footer>
 
-<!-- 이미지 확대 모달 (project.js에서 사용) -->
 <div id="imageModal" class="image-modal hidden">
   <div class="image-modal-content">
     <button class="image-modal-close">&times;</button>
