@@ -316,6 +316,14 @@ footer {
   background-image: url("../images/mail.svg");
 }
 
+.contact-icon.resume {
+  background-image: url("../images/resume.png");
+}
+
+.contact-icon.portfolio {
+  background-image: url("../images/portfolio.png");
+}
+
 .contact-text {
   display: flex;
   flex-direction: column;
