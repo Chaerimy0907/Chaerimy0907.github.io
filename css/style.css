@@ -81,7 +81,9 @@ header {
 ========================================= */
 main {
   min-height: calc(100vh - 64px - 70px);
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
 }
 
@@ -102,7 +104,8 @@ footer {
 /* 중앙 큰 카드형 Hero 섹션 */
 .home-hero {
   max-width: 1040px;
-  margin: 4rem auto;
+  width: 100%;
+  margin: 0 auto;
   padding: 4rem 4.5rem;
   border-radius: 32px;
   background: radial-gradient(circle at top left,
@@ -194,13 +197,6 @@ footer {
 }
 
 /* ===== HOME 중앙 Hero ===== */
-.home-hero {
-  text-align: center;
-  padding: 140px 20px 120px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .home-hero h1 {
   font-size: 2.6rem;
   font-weight: 700;
@@ -222,7 +218,6 @@ footer {
 .hero-tags {
   list-style: none;
   padding: 0;
-  margin-bottom: 2.4rem;
   font-size: 0.98rem;
   color: #6f8ff8;
   line-height: 1.9;
@@ -245,7 +240,8 @@ footer {
 /* 모바일에서 여백 조정 */
 @media (max-width: 900px) {
   .home-hero {
-    padding: 90px 16px 80px;
+    margin: 2.5rem 1rem;
+    padding: 2.8rem 1.8rem;
   }
 
   .home-hero h1 {
