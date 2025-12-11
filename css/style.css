@@ -97,11 +97,10 @@ footer {
 ========================================= */
 .home-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-.profile-wrap {
+/* 중앙 큰 카드형 Hero 섹션 */
+.home-hero {
   max-width: 1040px;
   margin: 4.5rem auto 3.5rem;
   padding: 4rem 4.5rem;
@@ -112,66 +111,42 @@ footer {
     #f1f4ff 100%
   );
   box-shadow: 0 28px 80px rgba(111, 143, 248, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 1.6rem;
 }
 
-/* 프로필 이미지 원형 */
-.profile-circle {
-  display: none;
-}
-
-.profile-circle img {
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
-}
-
-/* 오른쪽 텍스트 블럭 */
-.profile-text {
-  width: auto;
-}
-
-.profile-text h2 {
+/* 타이틀 / 서브타이틀 */
+.home-hero h1 {
   font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  color: #1f2937;
+  margin-bottom: 0.6rem;
 }
 
-.profile-text .name {
-  color: var(--indigo-soft);
-}
-
-.profile-text h3 {
-  font-size: 1.05rem;
+.home-hero h3 {
+  font-size: 1.1rem;
+  color: var(--text-sub);
   font-weight: 400;
-  color: #6b7280;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.8rem;
 }
 
-.info-list {
+/* 태그 리스트 */
+.hero-tags {
   list-style: none;
-  font-size: 0.95rem;
+  padding: 0;
+  margin-bottom: 2.4rem;
+  font-size: 0.98rem;
   color: #6f8ff8;
-  margin-bottom: 2rem;
   line-height: 1.9;
 }
 
-.info-list li {
-  margin-bottom: 0.15rem;
-}
-
-/* 버튼 */
-.home-buttons {
+/* 버튼 줄 */
+.hero-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
   justify-content: center;
+  gap: 0.9rem;
 }
 
+/* 버튼 공통 */
 .btn-primary,
 .btn-secondary {
   font-size: 0.9rem;
@@ -181,6 +156,7 @@ footer {
   cursor: pointer;
 }
 
+/* 메인 버튼 */
 .btn-primary {
   background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
   color: #ffffff;
@@ -190,6 +166,7 @@ footer {
   filter: brightness(1.05);
 }
 
+/* 서브 버튼 */
 .btn-secondary {
   background: #ffffff;
   border-color: var(--blue-main);
@@ -202,23 +179,17 @@ footer {
 
 /* HOME 반응형 */
 @media (max-width: 900px) {
-  main {
-    align-items: flex-start;
+  .home-hero {
+    margin: 3rem 1rem 2.5rem;
+    padding: 2.8rem 1.8rem;
   }
 
-  .profile-wrap {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 3rem;
+  .home-hero h1 {
+    font-size: 2.1rem;
   }
 
-  .profile-text {
-    max-width: 420px;
-  }
-
-  .home-buttons {
-    justify-content: center;
+  .home-hero h3 {
+    font-size: 1rem;
   }
 }
 
