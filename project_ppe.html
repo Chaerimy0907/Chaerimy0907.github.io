@@ -1,54 +1,310 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>PPE 착용 감지 실험 | Chaeryeon</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Project | PPE 착용 감지 모니터링 시스템</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 <header>
-  <div class="wrapper nav">
-    <div class="nav-left">CHAERYEON</div>
-    <div class="nav-right">
+  <div class="nav">
+    <div class="nav-left">CR</div>
+    <nav class="nav-right">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="projects.html" class="active">Project</a>
-      <a href="board.html">Board</a>
-    </div>
+      <a href="project.html" class="active">Project</a>
+      <a href="board.html">board</a>
+    </nav>
   </div>
 </header>
 
-<main>
-  <section class="wrapper">
-    <div class="page-card">
-      <div class="section-label">PROJECT DETAIL</div>
-      <div class="page-title">PPE 착용 감지 실험</div>
-      <div class="page-sub">
-        YOLOv8 · 안전모/조끼 감지 · 착용률 계산
+<main class="project-detail-page">
+  <div class="project-detail-inner">
+    <div class="project-detail-card">
+
+      <!-- 상단 제목 + 메타 -->
+      <header class="project-detail-header">
+        <h1 class="project-detail-title">PPE 착용 감지 모니터링 시스템</h1>
+        <p class="project-detail-meta">
+          2025.08 · 개인 프로젝트 · YOLOv8 기반 안전모 / 조끼 착용 모니터링
+        </p>
+      </header>
+
+      <!-- 대표 이미지 -->
+      <div class="project-detail-image"
+           style="background-image: url('images/ppe_overview.png');">
       </div>
 
-      <h3>프로젝트 개요</h3>
-      <p>
-        작업자의 안전모와 조끼 착용 여부를 감지하고, 일정 시간 단위로 착용률을 계산해  
-        CSV로 기록하는 실험 프로젝트입니다.
-      </p>
+      <!-- 개요 / 역할 / 기술스택 / 타임라인 -->
+      <div class="summary-grid">
+        <!-- 왼쪽: OVERVIEW + GOAL -->
+        <div>
+          <section class="project-detail-section">
+            <h3>PROJECT OVERVIEW</h3>
+            <p class="label-sub">프로젝트 설명</p>
+            <p class="project-detail-text">
+              작업 현장의 영상에서 사람과 PPE(안전모, 안전조끼)를 자동으로 감지하고,
+              <strong>인원 수 대비 PPE 완전 착용 비율</strong>을 실시간으로 계산·표시하는 모니터링 시스템이다.<br><br>
+              YOLOv8 기반 객체 감지 모델을 사용해 <code>Person / Hardhat / Safety Vest</code>
+              클래스를 탐지하고, PPE 중심점이 사람 박스 안에 포함되는지를 기준으로 착용 여부를 판별한다.
+              프레임마다 <strong>총 인원 수, 완전 착용 인원 수, 착용률(%)</strong>을 HUD 형식으로 시각화하고,
+              일정 주기마다 평균 착용률을 CSV로 기록해 통계로 관리할 수 있도록 했다.
+            </p>
+          </section>
 
-      <h3 style="margin-top:1.2rem;">핵심 구현 내용</h3>
-      <ul class="list">
-        <li>· YOLOv8 기반 PPE Detection 파이프라인 구성</li>
-        <li>· 감지 결과를 이용한 착용률 계산 로직 구현</li>
-        <li>· 1시간 단위 CSV 로그 저장 구조 설계</li>
-      </ul>
+          <section class="project-detail-section">
+            <h3>PROJECT GOAL</h3>
+            <p class="label-sub">프로젝트 목적</p>
+            <ul class="project-detail-list">
+              <li>CCTV / 작업 현장 영상을 기반으로 실시간 PPE 착용 여부 자동 판별</li>
+              <li>총 인원 수 대비 PPE 완전 착용률을 직관적인 HUD 형태로 시각화</li>
+              <li>일정 간격으로 착용률 통계를 CSV로 저장하여 <strong>추세 분석</strong> 가능하도록 구현</li>
+              <li>PPE 미착용 인원이 기준 이상 발생할 경우 <strong>경고 메시지</strong>로 즉시 피드백 제공</li>
+              <li>향후 대시보드, 알림 시스템과 쉽게 연동할 수 있는 구조로 설계</li>
+            </ul>
+          </section>
+        </div>
 
-      <p style="margin-top:1.6rem;">
-        <a href="projects.html" class="btn-ghost">← Project 목록으로 돌아가기</a>
-      </p>
+        <!-- 오른쪽: MY ROLE + TECH STACK -->
+        <div>
+          <section class="project-detail-section">
+            <h3>MY ROLE</h3>
+            <p class="label-sub">주요 업무 및 상세 역할</p>
+            <ul class="project-detail-list">
+              <li>YOLOv8 기반 PPE 감지 모델 선정 및 클래스 구조(Person / Hardhat / Safety Vest) 설계</li>
+              <li>탐지 결과를 활용한 <strong>사람–PPE 매칭 로직</strong>(중심점 포함 여부 기반) 설계 및 구현</li>
+              <li>PPE 착용 상태에 따른 바운딩 박스 색상 규칙 및 HUD 텍스트 구조 정의</li>
+              <li>프레임 단위 통계를 시간 구간별 평균으로 집계하여 CSV로 저장하는 파이프라인 구현</li>
+              <li>착용률 기준(예: 85% 이상 양호)을 정하고, 경고 조건 및 메시지 정책 설계</li>
+              <li>테스트 영상에 대한 반복 실험 및 파라미터(신뢰도 임계값, 저장 주기 등) 튜닝</li>
+            </ul>
+          </section>
+
+          <section class="project-detail-section">
+            <h3>TECH STACK</h3>
+            <p class="label-sub">사용 기술</p>
+            <div class="project-detail-tags">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">YOLOv8 (Ultralytics)</span>
+              <span class="tag-pill">OpenCV</span>
+              <span class="tag-pill">Computer Vision</span>
+              <span class="tag-pill">PPE Detection</span>
+              <span class="tag-pill">CSV Logging</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- TIMELINE & TEAM -->
+      <section class="project-detail-section timeline-section">
+        <h3>TIMELINE &amp; TEAM</h3>
+        <p class="label-sub">작업 기간 및 인원 구성</p>
+        <ul class="project-detail-list">
+          <li><strong>작업 기간</strong> : 2025.08 (약 3주) — 모델 실험 · 로직 설계 · 통계 기능 구현</li>
+          <li><strong>인원 구성</strong> : 개인 프로젝트
+            <ul class="project-detail-list" style="margin-top: 0.2rem;">
+              <li>모델 선택, 감지 파이프라인, PPE 판별 로직, 시각화, CSV 통계 저장까지 전 과정 단독 수행</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 개발 과정 섹션 제목 -->
+      <section class="project-detail-section dev-heading">
+        <h3>DEVELOPMENT PROCESS</h3>
+        <p class="label-sub">단계별 진행 내용 · 역할 · 문제 해결</p>
+      </section>
+
+      <!-- 1단계. 문제 정의 & 모델 준비 -->
+      <section class="dev-step">
+        <h4 class="dev-step-title">1단계. 문제 정의 &amp; 모델 준비</h4>
+        <div class="dev-step-block">
+          <div class="dev-step-media project-detail-image"
+               style="background-image: url('images/ppe_step1.png');">
+          </div>
+          <div class="dev-step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                “얼마나 많은 사람이 PPE를 제대로 착용하고 있는가?”를 숫자로 보여주는 것을 목표로 문제를 정의했다.
+                YOLO 계열 모델 중 사용성이 높은 Ultralytics YOLOv8을 선택하고,
+                <code>best.pt</code> 모델을 로딩해 <code>Person / Hardhat / Safety Vest</code> 클래스 탐지가 가능하도록 설정했다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                모델 경로, 신뢰도 임계값(<code>CONF_THRESHOLD</code>) 등 핵심 하이퍼파라미터를 정하고,
+                테스트 영상(hardhat1.mp4)을 기반으로 모델이 실제 PPE 객체를 충분히 안정적으로 잡는지 검증했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                신뢰도 임계값을 낮추면 잘못된 박스가 많아지고, 높이면 PPE 일부를 놓치는 문제가 발생했다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                여러 신뢰도 값(0.25 ~ 0.6)을 테스트한 뒤, <strong>0.4</strong>에서
+                “미검출 &amp; 오검출” 간 균형이 가장 안정적인 것을 확인하고 기본값으로 채택했다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2단계. 객체 감지 & PPE 매칭 로직 -->
+      <section class="dev-step">
+        <h4 class="dev-step-title">2단계. 객체 감지 &amp; PPE 매칭 로직</h4>
+        <div class="dev-step-block">
+          <div class="dev-step-media project-detail-image"
+               style="background-image: url('images/ppe_step2.png');">
+          </div>
+          <div class="dev-step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                한 프레임에서 사람, 안전모, 안전조끼를 각각 리스트로 분리하고,
+                PPE 박스의 중심점이 사람 박스 내부에 들어가는지 확인해
+                해당 인원이 PPE를 착용한 것으로 판단하는 로직을 구현했다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                <code>get_box_center()</code>, <code>center_inside()</code>와 같은
+                유틸리티 함수를 설계해 코드를 모듈화하고,
+                인당 <code>has_hat</code>, <code>has_vest</code>를 체크한 뒤
+                둘 다 만족할 때만 <strong>완전 착용자</strong>로 카운트하는 방식을 정의했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                카메라 각도와 사람 위치에 따라 PPE 박스 중심점이 사람 박스 경계 바깥으로 살짝 벗어나는 경우가 있었다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                초기에는 IoU 기반 매칭도 고려했으나 구현 복잡도 대비 이점이 크지 않다고 판단했다.
+                대신 사람 박스가 너무 타이트하게 잡히지 않도록 영상 해상도와 리사이즈 방식을 조정해
+                중심점 기준 매칭이 안정적으로 동작하도록 보정했다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3단계. 통계 집계 & CSV 저장 -->
+      <section class="dev-step">
+        <h4 class="dev-step-title">3단계. 통계 집계 &amp; CSV 저장</h4>
+        <div class="dev-step-block">
+          <div class="dev-step-media project-detail-image"
+               style="background-image: url('images/ppe_step3.png');">
+          </div>
+          <div class="dev-step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                프레임 단위로 계산한 <strong>총 인원 수</strong>와 <strong>완전 착용 인원 수</strong>를
+                리스트에 누적 저장했다가 일정 시간마다 평균값을 구해 CSV 파일로 저장하는 구조를 만들었다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                <code>total_history</code>, <code>perfect_history</code>를 활용해
+                구간 평균 인원 수와 평균 착용률을 계산하고,
+                <code>ppe_log.csv</code>에 타임스탬프와 함께 기록하는
+                <code>save_csv()</code> 함수를 구현했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                YOLO 감지 특성상 특정 프레임에서만 일시적으로 인원을 놓치는 경우가 있어
+                단일 프레임 기준 통계는 들쭉날쭉했다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                프레임 단위가 아닌 <strong>시간 구간 평균</strong>을 사용해 통계를 저장하도록 설계했다.
+                테스트 단계에서는 10초 간격으로, 실제 운영을 가정한 설계에서는
+                <code>timedelta(hours=1)</code> 기준으로 바꿔서 사용할 수 있도록 코드에 주석을 남겨두었다.
+                PPE 착용률이 <strong>85% 이상이면 양호</strong>한 상태로 보는 기준도 함께 정리했다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4단계. 시각화 & 경고 정책 -->
+      <section class="dev-step">
+        <h4 class="dev-step-title">4단계. 시각화 &amp; 경고 정책</h4>
+        <div class="dev-step-block">
+          <div class="dev-step-media project-detail-image"
+               style="background-image: url('images/ppe_step4.png');">
+          </div>
+          <div class="dev-step-text">
+            <ul class="project-detail-list">
+              <li>
+                <strong>진행 내용</strong> :
+                PPE 착용 여부에 따라 사람 박스를 <strong>초록(완전 착용) / 빨강(미착용)</strong> 색상으로 구분해 그리고,
+                화면 좌측 상단에 Total / Perfect / Ratio 정보를 HUD처럼 표시했다.
+                미착용 인원이 2명 이상일 때는 <code>No Wearing</code> 경고 문구를 함께 띄우도록 했다.
+              </li>
+              <li>
+                <strong>담당 역할</strong> :
+                텍스트 위치(<code>TEXT_POS</code>)와 색상(<code>LABEL_COLORS</code>)을
+                설정값으로 분리해 <code>Config</code> 클래스로 관리하고,
+                <code>draw_text()</code>, <code>draw_box()</code> 함수로 시각화 로직을 정리했다.
+              </li>
+              <li>
+                <strong>마주친 문제</strong> :
+                화면에 너무 많은 정보를 한 번에 표시하면 오히려 가독성이 떨어지는 문제가 있었다.
+              </li>
+              <li>
+                <strong>해결 방안</strong> :
+                핵심 지표만 남기고(총 인원, 완전 착용, 비율, 경고 문구),
+                색상과 텍스트 크기만으로도 상태가 빠르게 파악되도록 단순한 레이아웃으로 재구성했다.
+                향후 웹 대시보드와 연동할 때는 이 HUD를 그대로 스트리밍에 사용할 수 있도록 인터페이스를 유지했다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 성과 & 배운 점 -->
+      <section class="project-detail-section outcome-section">
+        <h3>OUTCOME &amp; LEARNINGS</h3>
+        <p class="label-sub">프로젝트 성과 및 얻은 인사이트</p>
+        <p class="project-detail-text">
+          단순히 “PPE를 감지했다”에서 끝나는 것이 아니라,
+          <strong>얼마나 많은 사람이 규정을 지키고 있는지 수치로 보여주는 구조</strong>까지 구현했다는 점이 이 프로젝트의 핵심이다.
+          프레임 단위 탐지 결과를 시간 단위 통계로 집계하고,
+          평균 인원 수와 착용률을 CSV에 남겨 나중에 다시 분석할 수 있도록 만든 경험은,
+          현장에서 실제로 활용 가능한 컴퓨터 비전 시스템을 설계하는 감각을 길러줬다.<br><br>
+          또한, 모델 성능만큼이나 <strong>판단 기준(중심점 포함 여부, 임계값, 경고 조건)</strong>을
+          어떻게 설계하느냐에 따라 시스템이 주는 인사이트가 달라진다는 점을 배웠다.
+          이 프로젝트를 통해, 추상적인 “딥러닝 모델”이 아니라
+          <strong>데이터 수집 → 모델 추론 → 로직 설계 → 통계/시각화</strong>까지 이어지는 전체 파이프라인을
+          설계·구현하는 데 자신감을 갖게 되었다.
+        </p>
+
+        <div class="project-detail-links">
+          <a href="https://github.com/smartcore102/Yeonhee_smartcore.git"
+             target="_blank"
+             class="project-detail-link github">
+            GitHub Repository
+          </a>
+          <a href="project.html" class="project-detail-link">
+            ← 프로젝트 목록으로
+          </a>
+        </div>
+      </section>
+
     </div>
-  </section>
+  </div>
 </main>
 
 <footer>
-  © 2025 Chaeryeon
+  <p>© 2025 Chaeryeon</p>
 </footer>
+
+<!-- 이미지 확대 모달 (project.js에서 사용) -->
+<div id="imageModal" class="image-modal hidden">
+  <div class="image-modal-content">
+    <button class="image-modal-close">&times;</button>
+    <img id="modalImage" src="" alt="확대 이미지" />
+  </div>
+</div>
+
+<script src="js/project.js"></script>
 </body>
 </html>
