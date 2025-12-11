@@ -986,7 +986,7 @@ main.project-page {
   justify-content: center;
   align-items: flex-start;
   padding: 4rem 0 3rem;
-  background: var(--blue-bg);
+  background: #ffffff;
 }
 
 .project-detail-inner {
