@@ -32,7 +32,7 @@
 
       <!-- 대표 이미지 -->
       <div class="project-detail-image"
-           style="background-image: url('images/ppe_overview.png');">
+           style="background-image: url('images/ppe.jpg');">
       </div>
 
       <!-- 개요 / 역할 / 기술스택 / 타임라인 -->
@@ -45,10 +45,12 @@
             <p class="project-detail-text">
               작업 현장의 영상에서 사람과 PPE(안전모, 안전조끼)를 자동으로 감지하고,
               <strong>인원 수 대비 PPE 완전 착용 비율</strong>을 실시간으로 계산·표시하는 모니터링 시스템이다.<br><br>
-              YOLOv8 기반 객체 감지 모델을 사용해 <code>Person / Hardhat / Safety Vest</code>
-              클래스를 탐지하고, PPE 중심점이 사람 박스 안에 포함되는지를 기준으로 착용 여부를 판별한다.
-              프레임마다 <strong>총 인원 수, 완전 착용 인원 수, 착용률(%)</strong>을 HUD 형식으로 시각화하고,
-              일정 주기마다 평균 착용률을 CSV로 기록해 통계로 관리할 수 있도록 했다.
+              학습 자체를 목표로 하기보다는, 이미 공개된 <strong>사전 학습 YOLOv8 모델</strong>을 활용해
+              <code>Person / Hardhat / Safety Vest</code> 클래스를 감지하고,
+              그 출력을 기반으로 <strong>착용 여부 판별·시각화·통계 집계</strong>까지 이어지는
+              하나의 파이프라인을 설계·구현하는 데 추점을 두었다.<br><br>
+              각 프레임마다 <strong>총 인원 수, 완전 착용 인원 수, 착용률(%)</strong>을 HUD 형식으로 표시하고,
+              일정 주기마다 평균 착용률을 CSV로 기록해 시간대별 PPE 준수율을 확인할 수 있도록 구성했다.
             </p>
           </section>
 
@@ -60,7 +62,7 @@
               <li>총 인원 수 대비 PPE 완전 착용률을 직관적인 HUD 형태로 시각화</li>
               <li>일정 간격으로 착용률 통계를 CSV로 저장하여 <strong>추세 분석</strong> 가능하도록 구현</li>
               <li>PPE 미착용 인원이 기준 이상 발생할 경우 <strong>경고 메시지</strong>로 즉시 피드백 제공</li>
-              <li>향후 대시보드, 알림 시스템과 쉽게 연동할 수 있는 구조로 설계</li>
+              <li>향후 로봇·대시보드와 연동 가능한 <strong>안전 모니터링 컴포넌트</strong>로 확장 가능한 형태로 구현</li>
             </ul>
           </section>
         </div>
@@ -71,11 +73,11 @@
             <h3>MY ROLE</h3>
             <p class="label-sub">주요 업무 및 상세 역할</p>
             <ul class="project-detail-list">
-              <li>YOLOv8 기반 PPE 감지 모델 선정 및 클래스 구조(Person / Hardhat / Safety Vest) 설계</li>
+              <li>사전 학습 YOLOv8 PPE 모델 리서치 및 선정, 모델 제약사항(색상 한정 등) 분석</li>
               <li>탐지 결과를 활용한 <strong>사람–PPE 매칭 로직</strong>(중심점 포함 여부 기반) 설계 및 구현</li>
               <li>PPE 착용 상태에 따른 바운딩 박스 색상 규칙 및 HUD 텍스트 구조 정의</li>
-              <li>프레임 단위 통계를 시간 구간별 평균으로 집계하여 CSV로 저장하는 파이프라인 구현</li>
-              <li>착용률 기준(예: 85% 이상 양호)을 정하고, 경고 조건 및 메시지 정책 설계</li>
+              <li>프레임 단위 통계를 <strong>시간 구간 평균</strong>으로 집계하여 CSV로 저장하는 파이프라인 구현</li>
+              <li>PPE 착용률 기준(예: 85% 이상 양호) 및 경고 조건 설정 등 운영 정책 정의</li>
               <li>테스트 영상에 대한 반복 실험 및 파라미터(신뢰도 임계값, 저장 주기 등) 튜닝</li>
             </ul>
           </section>
@@ -88,7 +90,6 @@
               <span class="tag-pill">YOLOv8 (Ultralytics)</span>
               <span class="tag-pill">OpenCV</span>
               <span class="tag-pill">Computer Vision</span>
-              <span class="tag-pill">PPE Detection</span>
               <span class="tag-pill">CSV Logging</span>
             </div>
           </section>
@@ -100,10 +101,10 @@
         <h3>TIMELINE &amp; TEAM</h3>
         <p class="label-sub">작업 기간 및 인원 구성</p>
         <ul class="project-detail-list">
-          <li><strong>작업 기간</strong> : 2025.08 (약 3주) — 모델 실험 · 로직 설계 · 통계 기능 구현</li>
+          <li><strong>작업 기간</strong> : 2025.08 (약 1주) — 모델 실험 · 로직 설계 · 통계 기능 구현</li>
           <li><strong>인원 구성</strong> : 개인 프로젝트
             <ul class="project-detail-list" style="margin-top: 0.2rem;">
-              <li>모델 선택, 감지 파이프라인, PPE 판별 로직, 시각화, CSV 통계 저장까지 전 과정 단독 수행</li>
+              <li>모델 리서치, 감지 파이프라인, PPE 판별 로직, 시각화, CSV 통계 저장까지 전 과정 단독 수행</li>
             </ul>
           </li>
         </ul>
@@ -117,7 +118,7 @@
 
       <!-- 1단계. 문제 정의 & 모델 준비 -->
       <section class="dev-step">
-        <h4 class="dev-step-title">1단계. 문제 정의 &amp; 모델 준비</h4>
+        <h4 class="dev-step-title">1단계. 문제 정의 &amp; 학습 모델 선정</h4>
         <div class="dev-step-block">
           <div class="dev-step-media project-detail-image"
                style="background-image: url('images/ppe_step1.png');">
@@ -127,20 +128,23 @@
               <li>
                 <strong>진행 내용</strong> :
                 “얼마나 많은 사람이 PPE를 제대로 착용하고 있는가?”를 숫자로 보여주는 것을 목표로 문제를 정의했다.
-                YOLO 계열 모델 중 사용성이 높은 Ultralytics YOLOv8을 선택하고,
-                <code>best.pt</code> 모델을 로딩해 <code>Person / Hardhat / Safety Vest</code> 클래스 탐지가 가능하도록 설정했다.
+                학습 데이터 구축보다는 <strong>운영 가능한 모니터링 시스템 구현</strong>에 집중하기 위해
+                공개된 사전 학습 YOLOv8 모델을 선택해 적용했다.
               </li>
               <li>
                 <strong>담당 역할</strong> :
-                모델 경로, 신뢰도 임계값(<code>CONF_THRESHOLD</code>) 등 핵심 하이퍼파라미터를 정하고,
-                테스트 영상(hardhat1.mp4)을 기반으로 모델이 실제 PPE 객체를 충분히 안정적으로 잡는지 검증했다.
+                모델 경로, 신뢰도 임계값(<code>CONF_THRESHOLD</code>) 등 핵심 파라미터를 설정하고,
+                테스트 영상 <code>Person / HardHat / Safety Vest</code> 클래스가 안정적으로 감지되는 검증했다.
               </li>
               <li>
                 <strong>마주친 문제</strong> :
+                사전 학습 모델의 한계로 인해 감지 가능한 PPE 외형(색상·형태)이 일부에 한정된다는 점이 있었다.<br>
                 신뢰도 임계값을 낮추면 잘못된 박스가 많아지고, 높이면 PPE 일부를 놓치는 문제가 발생했다.
               </li>
               <li>
                 <strong>해결 방안</strong> :
+                모델 자체를 재학습하기보다는, 현재 감지 가능한 범위를 전제로 두고
+                <strong>신뢰도 튜닝과 후처리 로직</strong>에 집중했다.<br>
                 여러 신뢰도 값(0.25 ~ 0.6)을 테스트한 뒤, <strong>0.4</strong>에서
                 “미검출 &amp; 오검출” 간 균형이 가장 안정적인 것을 확인하고 기본값으로 채택했다.
               </li>
@@ -168,18 +172,19 @@
                 <strong>담당 역할</strong> :
                 <code>get_box_center()</code>, <code>center_inside()</code>와 같은
                 유틸리티 함수를 설계해 코드를 모듈화하고,
-                인당 <code>has_hat</code>, <code>has_vest</code>를 체크한 뒤
-                둘 다 만족할 때만 <strong>완전 착용자</strong>로 카운트하는 방식을 정의했다.
+                인당 <code>has_hat</code>, <code>has_vest</code>를 체크해
+                둘 다 만족할 때만 <strong>완전 착용자</strong>로 카운트하는 방식을 설계했다.
               </li>
               <li>
                 <strong>마주친 문제</strong> :
-                카메라 각도와 사람 위치에 따라 PPE 박스 중심점이 사람 박스 경계 바깥으로 살짝 벗어나는 경우가 있었다.
+                카메라 각도나 프레임 상황에 따라 PPE 박스 중심점이 사람 박스 가장자리 밖으로 살짝 벗어나는 경우가 있어
+                매칭이 불안정해지는 구간이 있었다.
               </li>
               <li>
                 <strong>해결 방안</strong> :
-                초기에는 IoU 기반 매칭도 고려했으나 구현 복잡도 대비 이점이 크지 않다고 판단했다.
-                대신 사람 박스가 너무 타이트하게 잡히지 않도록 영상 해상도와 리사이즈 방식을 조정해
-                중심점 기준 매칭이 안정적으로 동작하도록 보정했다.
+                초기에는 IoU 기반 매칭도 고려했으나 구현 복잡도 대비 이점이 크지 않다고 판단하여
+                중심점 기준 방식을 유지하되, 영상 해상도와 리사이즈 방식을 조정해 사람 박스가
+                지나치게 타이트하게 잡히지 않도록 보정했다.
               </li>
             </ul>
           </div>
@@ -198,26 +203,25 @@
               <li>
                 <strong>진행 내용</strong> :
                 프레임 단위로 계산한 <strong>총 인원 수</strong>와 <strong>완전 착용 인원 수</strong>를
-                리스트에 누적 저장했다가 일정 시간마다 평균값을 구해 CSV 파일로 저장하는 구조를 만들었다.
+                리스트에 누적 저장했다가 일정 시간마다 평균값을 구해 CSV 파일로 저장하는 구조를 설계했다.
               </li>
               <li>
                 <strong>담당 역할</strong> :
                 <code>total_history</code>, <code>perfect_history</code>를 활용해
                 구간 평균 인원 수와 평균 착용률을 계산하고,
-                <code>ppe_log.csv</code>에 타임스탬프와 함께 기록하는
+                <code>ppe_log.csv</code>에 타임스탬프와 함께 저장하는
                 <code>save_csv()</code> 함수를 구현했다.
               </li>
               <li>
                 <strong>마주친 문제</strong> :
-                YOLO 감지 특성상 특정 프레임에서만 일시적으로 인원을 놓치는 경우가 있어
-                단일 프레임 기준 통계는 들쭉날쭉했다.
+                단일 프레임 기준으로 보면 감지 누락·오검출 등으로 수치 변동이 커
+                바로 현황 판단에 쓰기 어렵다는 문제가 있었다.
               </li>
               <li>
                 <strong>해결 방안</strong> :
-                프레임 단위가 아닌 <strong>시간 구간 평균</strong>을 사용해 통계를 저장하도록 설계했다.
-                테스트 단계에서는 10초 간격으로, 실제 운영을 가정한 설계에서는
-                <code>timedelta(hours=1)</code> 기준으로 바꿔서 사용할 수 있도록 코드에 주석을 남겨두었다.
-                PPE 착용률이 <strong>85% 이상이면 양호</strong>한 상태로 보는 기준도 함께 정리했다.
+                프레임 단위 대신 <strong>시간 구간 평균</strong>을 사용해 통계를 저장하도록 설계했다.
+                테스트 단계에서는 10초 간격으로 동작시키고,
+                실제 운영을 가정한 설계에서는 <code>timedelta(hours=1)</code> 기준으로 바꿔서 사용할 수 있도록 설정 부분을 분리해 두었다.
               </li>
             </ul>
           </div>
@@ -237,23 +241,30 @@
                 <strong>진행 내용</strong> :
                 PPE 착용 여부에 따라 사람 박스를 <strong>초록(완전 착용) / 빨강(미착용)</strong> 색상으로 구분해 그리고,
                 화면 좌측 상단에 Total / Perfect / Ratio 정보를 HUD처럼 표시했다.
-                미착용 인원이 2명 이상일 때는 <code>No Wearing</code> 경고 문구를 함께 띄우도록 했다.
+                미착용 인원이 2명 이상일 때는 <code>No Wearing</code> 경고 문구를 함께 띄워
+                현장 관리자가 한눈에 상황을 파악할 수 있도록 했다.
               </li>
               <li>
                 <strong>담당 역할</strong> :
                 텍스트 위치(<code>TEXT_POS</code>)와 색상(<code>LABEL_COLORS</code>)을
                 설정값으로 분리해 <code>Config</code> 클래스로 관리하고,
-                <code>draw_text()</code>, <code>draw_box()</code> 함수로 시각화 로직을 정리했다.
+                <code>draw_text()</code>, <code>draw_box()</code> 함수를 통해 HUD 렌더링 로직을 모듈화했다.
               </li>
               <li>
                 <strong>마주친 문제</strong> :
-                화면에 너무 많은 정보를 한 번에 표시하면 오히려 가독성이 떨어지는 문제가 있었다.
+                초기에는 "미착용 인원이 1명이라도 존재하면 경고" 정책으로 구현했는데,
+                프레임마다 감지 결과가 조금만 흔들려도 <code>No Wearing</code> 알림이
+                과도하게 발생하는 문제가 있었다.
+                실제로는 잠깐 가려진 상황이나 일시적인 미검출임에도
+                경고가 계속 깜빡여서 모니터링 화면의 신뢰도가 떨어졌다.
               </li>
               <li>
                 <strong>해결 방안</strong> :
-                핵심 지표만 남기고(총 인원, 완전 착용, 비율, 경고 문구),
-                색상과 텍스트 크기만으로도 상태가 빠르게 파악되도록 단순한 레이아웃으로 재구성했다.
-                향후 웹 대시보드와 연동할 때는 이 HUD를 그대로 스트리밍에 사용할 수 있도록 인터페이스를 유지했다.
+                우선 정책을 "<strong>동시에 2명 이상이 미착용일 때만 경고</strong>"로 변경해서
+                단일 인원 감지 흔들림에 의한 오탐 경고를 줄였다.
+                그리고 프레임 단위 경고는 즉시 확인용으로 두고,
+                실제 리포트에는 3단계에서 계산한 <strong>시간 구간 평균 착용률</strong>을 사용하도록 역할을 분리했다.
+                이 구조를 통해 "순간적인 감지 노이즈"와 "지속적인 규정 위반 상태"를 구분할 수 있도록 설계했다.
               </li>
             </ul>
           </div>
@@ -265,16 +276,16 @@
         <h3>OUTCOME &amp; LEARNINGS</h3>
         <p class="label-sub">프로젝트 성과 및 얻은 인사이트</p>
         <p class="project-detail-text">
-          단순히 “PPE를 감지했다”에서 끝나는 것이 아니라,
-          <strong>얼마나 많은 사람이 규정을 지키고 있는지 수치로 보여주는 구조</strong>까지 구현했다는 점이 이 프로젝트의 핵심이다.
-          프레임 단위 탐지 결과를 시간 단위 통계로 집계하고,
-          평균 인원 수와 착용률을 CSV에 남겨 나중에 다시 분석할 수 있도록 만든 경험은,
-          현장에서 실제로 활용 가능한 컴퓨터 비전 시스템을 설계하는 감각을 길러줬다.<br><br>
-          또한, 모델 성능만큼이나 <strong>판단 기준(중심점 포함 여부, 임계값, 경고 조건)</strong>을
-          어떻게 설계하느냐에 따라 시스템이 주는 인사이트가 달라진다는 점을 배웠다.
-          이 프로젝트를 통해, 추상적인 “딥러닝 모델”이 아니라
-          <strong>데이터 수집 → 모델 추론 → 로직 설계 → 통계/시각화</strong>까지 이어지는 전체 파이프라인을
-          설계·구현하는 데 자신감을 갖게 되었다.
+          이 프로젝트는 딥러닝 모델을 직접 학습시키는 대신,
+          <strong>검증된 사전 학습 모델을 실제 시스템 안에 어떻게 녹여 넣을 것인지</strong>에 집중한 사례였다.<br><br>
+          모델에서 쏟아지는 박스 정보만 사용하는 것이 아니라,
+          사람-PPE 매칭 로직, 착용률 계산, 시간 구간별 통계, 경고 정책, HUD 시각화까지
+          한 흐름으로 설계하면서, 현장에서 바로 활용 가능한 <strong>안전 모니터링 모듈</strong>을 만드는 감각을 익혔다.<br><br>
+          이를 통해, 자율주행 로봇 프로젝트에서와 마찬가지로
+          센서·모델 출력 위에 <strong>상태 관리와 의사결정 로직</strong>을 어떻게 쌓아야 하는지가 중요하다는 걸
+          다시 한 번 확인할 수 있었다.
+          향후에는 ROS2 토픽(/image_raw, /safety_event 등)과 연동해
+          로봇 또는 관제 서버에서 함께 사용할 수 있는 컴포넌트로 확장할 계획이다.
         </p>
 
         <div class="project-detail-links">
